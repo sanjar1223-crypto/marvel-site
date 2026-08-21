@@ -6,6 +6,7 @@
     <title>Marvel Timeline — Твой путь по MCU</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -186,6 +187,20 @@
         .movie-card:hover {
             transform: translateY(-8px);
             border-color: #e62429;
+        }
+
+        .movie-poster {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 18px;
+            display: block;
+        }
+
+        .movie-card:hover .movie-poster {
+            transform: scale(1.02);
+            transition: 0.35s;
         }
 
         .movie-number {
@@ -450,6 +465,7 @@
                 padding: 25px;
             }
         }
+    
     </style>
 </head>
 
@@ -524,30 +540,35 @@
     <div class="movies">
 
         <div class="movie-card">
+            <img class="movie-poster" src="images/iron-man.jpg" alt="Iron Man">
             <span class="movie-number">2008 • PHASE 1</span>
             <h3>Iron Man</h3>
             <p>Начало кинематографической вселенной Marvel.</p>
         </div>
 
         <div class="movie-card">
+            <img class="movie-poster" src="images/the-avengers.jpg" alt="The Avengers">
             <span class="movie-number">2012 • PHASE 1</span>
             <h3>The Avengers</h3>
             <p>Первое объединение главных героев.</p>
         </div>
 
         <div class="movie-card">
+            <img class="movie-poster" src="images/civil-war.jpg" alt="Captain America: Civil War">
             <span class="movie-number">2016 • PHASE 3</span>
             <h3>Civil War</h3>
             <p>Конфликт внутри команды Avengers.</p>
         </div>
 
         <div class="movie-card">
+            <img class="movie-poster" src="images/infinity-war.jpg" alt="Avengers: Infinity War">
             <span class="movie-number">2018 • PHASE 3</span>
             <h3>Infinity War</h3>
             <p>Одна из главных точек Infinity Saga.</p>
         </div>
 
         <div class="movie-card">
+            <img class="movie-poster" src="images/endgame.jpg" alt="Avengers: Endgame">
             <span class="movie-number">2019 • PHASE 3</span>
             <h3>Endgame</h3>
             <p>Финальная глава Infinity Saga.</p>
@@ -648,75 +669,297 @@
     <h2 class="section-title">📅 Timeline MCU</h2>
 
     <p class="section-description">
-        Посмотри, как развивалась история MCU.
-        Здесь можно будет переключаться между хронологией событий
-        и порядком выхода проектов.
+        Полная хронология MCU в порядке событий внутри вселенной.
     </p>
 
     <div class="timeline">
 
         <div class="timeline-item">
-
             <div class="timeline-content">
                 <span>1940-е</span>
-                <h3>Captain America</h3>
-                <p>
-                    История Стива Роджерса и начало его пути.
-                </p>
+                <h3>Captain America: The First Avenger</h3>
+                <p>Позиция 1 в хронологии событий MCU.</p>
             </div>
-
         </div>
 
-
         <div class="timeline-item">
-
             <div class="timeline-content">
                 <span>1995</span>
                 <h3>Captain Marvel</h3>
-                <p>
-                    События происходят задолго до формирования Avengers.
-                </p>
+                <p>Позиция 2 в хронологии событий MCU.</p>
             </div>
-
         </div>
 
-
         <div class="timeline-item">
-
             <div class="timeline-content">
-                <span>2008</span>
+                <span>2010</span>
                 <h3>Iron Man</h3>
-                <p>
-                    Точка, с которой начинается MCU в порядке выхода.
-                </p>
+                <p>Позиция 3 в хронологии событий MCU.</p>
             </div>
-
         </div>
 
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span>2010</span>
+                <h3>Iron Man 2</h3>
+                <p>Позиция 4 в хронологии событий MCU.</p>
+            </div>
+        </div>
 
         <div class="timeline-item">
+            <div class="timeline-content">
+                <span>2010</span>
+                <h3>The Incredible Hulk</h3>
+                <p>Позиция 5 в хронологии событий MCU.</p>
+            </div>
+        </div>
 
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span>2011</span>
+                <h3>Thor</h3>
+                <p>Позиция 6 в хронологии событий MCU.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
             <div class="timeline-content">
                 <span>2012</span>
                 <h3>The Avengers</h3>
-                <p>
-                    Герои впервые объединяются против общей угрозы.
-                </p>
+                <p>Позиция 7 в хронологии событий MCU.</p>
             </div>
-
         </div>
 
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span>2012</span>
+                <h3>Iron Man 3</h3>
+                <p>Позиция 8 в хронологии событий MCU.</p>
+            </div>
+        </div>
 
         <div class="timeline-item">
+            <div class="timeline-content">
+                <span>2013</span>
+                <h3>Thor: The Dark World</h3>
+                <p>Позиция 9 в хронологии событий MCU.</p>
+            </div>
+        </div>
 
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span>2014</span>
+                <h3>Captain America: The Winter Soldier</h3>
+                <p>Позиция 10 в хронологии событий MCU.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span>2014</span>
+                <h3>Guardians of the Galaxy</h3>
+                <p>Позиция 11 в хронологии событий MCU.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span>2014</span>
+                <h3>Guardians of the Galaxy Vol. 2</h3>
+                <p>Позиция 12 в хронологии событий MCU.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span>2015</span>
+                <h3>Avengers: Age of Ultron</h3>
+                <p>Позиция 13 в хронологии событий MCU.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span>2015</span>
+                <h3>Ant-Man</h3>
+                <p>Позиция 14 в хронологии событий MCU.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span>2016</span>
+                <h3>Captain America: Civil War</h3>
+                <p>Позиция 15 в хронологии событий MCU.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span>2016</span>
+                <h3>Black Widow</h3>
+                <p>Позиция 16 в хронологии событий MCU.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span>2016</span>
+                <h3>Black Panther</h3>
+                <p>Позиция 17 в хронологии событий MCU.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span>2016</span>
+                <h3>Spider-Man: Homecoming</h3>
+                <p>Позиция 18 в хронологии событий MCU.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span>2016–2017</span>
+                <h3>Doctor Strange</h3>
+                <p>Позиция 19 в хронологии событий MCU.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span>2017</span>
+                <h3>Thor: Ragnarok</h3>
+                <p>Позиция 20 в хронологии событий MCU.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
             <div class="timeline-content">
                 <span>2018</span>
-                <h3>Infinity War</h3>
-                <p>
-                    Одна из ключевых точек Infinity Saga.
-                </p>
+                <h3>Ant-Man and the Wasp</h3>
+                <p>Позиция 21 в хронологии событий MCU.</p>
             </div>
+        </div>
 
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span>2018</span>
+                <h3>Avengers: Infinity War</h3>
+                <p>Позиция 22 в хронологии событий MCU.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span>2018–2023</span>
+                <h3>Avengers: Endgame</h3>
+                <p>Позиция 23 в хронологии событий MCU.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span>2024</span>
+                <h3>Shang-Chi and the Legend of the Ten Rings</h3>
+                <p>Позиция 24 в хронологии событий MCU.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span>2024</span>
+                <h3>Spider-Man: Far From Home</h3>
+                <p>Позиция 25 в хронологии событий MCU.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span>2024</span>
+                <h3>Eternals</h3>
+                <p>Позиция 26 в хронологии событий MCU.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span>2024</span>
+                <h3>Spider-Man: No Way Home</h3>
+                <p>Позиция 27 в хронологии событий MCU.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span>2025</span>
+                <h3>Doctor Strange in the Multiverse of Madness</h3>
+                <p>Позиция 28 в хронологии событий MCU.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span>2025</span>
+                <h3>Thor: Love and Thunder</h3>
+                <p>Позиция 29 в хронологии событий MCU.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span>2025</span>
+                <h3>Black Panther: Wakanda Forever</h3>
+                <p>Позиция 30 в хронологии событий MCU.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span>2026</span>
+                <h3>Ant-Man and the Wasp: Quantumania</h3>
+                <p>Позиция 31 в хронологии событий MCU.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span>2026</span>
+                <h3>Guardians of the Galaxy Vol. 3</h3>
+                <p>Позиция 32 в хронологии событий MCU.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span>2026</span>
+                <h3>The Marvels</h3>
+                <p>Позиция 33 в хронологии событий MCU.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span>2026</span>
+                <h3>Captain America: Brave New World</h3>
+                <p>Позиция 34 в хронологии событий MCU.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span>2026</span>
+                <h3>Thunderbolts*</h3>
+                <p>Позиция 35 в хронологии событий MCU.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span>2026</span>
+                <h3>Spider-Man: Brand New Day</h3>
+                <p>Позиция 36 в хронологии событий MCU.</p>
+            </div>
         </div>
 
     </div>
@@ -763,25 +1006,6 @@
             <p>
                 Разберись, как MCU разделён на фазы
                 и большие сюжетные саги.
-            </p>
-        </div>
-
-
-        <div class="feature">
-            <div class="feature-icon">🧬</div>
-            <h3>Карта связей</h3>
-            <p>
-                Исследуй связи между героями, фильмами
-                и событиями.
-            </p>
-        </div>
-
-
-        <div class="feature">
-            <div class="feature-icon">🥚</div>
-            <h3>Пасхалки</h3>
-            <p>
-                Ищи скрытые детали и связи между проектами.
             </p>
         </div>
 
