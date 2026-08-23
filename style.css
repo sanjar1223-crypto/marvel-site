@@ -372,6 +372,28 @@
     flex-shrink: 0;
 }
 
+
+/* ================= FEATURE LINK ================= */
+
+.feature-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.feature-link .feature-action {
+    display: inline-block;
+    margin-top: 14px;
+    color: #e62429;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.feature-link:hover .feature-action {
+    color: #ff4b50;
+}
+
 /* ================= FACTS ================= */
 
         .fact-box {
@@ -482,7 +504,193 @@
             color: white;
         }
 
-        /* ================= MOBILE ================= */
+        
+/* ================= MOVIES PAGE ================= */
+
+.logo-link {
+    color: white;
+    text-decoration: none;
+}
+
+.active-nav {
+    color: #e62429 !important;
+}
+
+.movies-page {
+    padding-top: 90px;
+    min-height: 100vh;
+}
+
+.movies-hero {
+    text-align: center;
+    padding: 80px 7% 35px;
+}
+
+.movies-hero h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.movies-hero > p {
+    color: #999;
+    margin-bottom: 35px;
+}
+
+.catalog-controls {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+#movieSearch {
+    width: 100%;
+    padding: 15px 18px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    background: #141414;
+    color: white;
+    outline: none;
+    font-size: 15px;
+}
+
+#movieSearch:focus {
+    border-color: #e62429;
+}
+
+.catalog-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+}
+
+.catalog-filter {
+    border: 1px solid #333;
+    background: #141414;
+    color: #ddd;
+    padding: 10px 20px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.catalog-filter:hover,
+.catalog-filter.active {
+    background: #e62429;
+    border-color: #e62429;
+    color: white;
+}
+
+.catalog-section {
+    padding: 25px 7% 90px;
+}
+
+.catalog-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 22px;
+}
+
+.catalog-card {
+    background: #141414;
+    border: 1px solid #292929;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: .25s;
+}
+
+.catalog-card:hover {
+    transform: translateY(-6px);
+    border-color: #e62429;
+}
+
+.catalog-poster,
+.catalog-placeholder {
+    width: 100%;
+    height: 285px;
+}
+
+.catalog-poster {
+    object-fit: cover;
+    display: block;
+    background: #0c0c0c;
+}
+
+.catalog-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #171717, #090909);
+    color: #777;
+    font-size: 45px;
+}
+
+.catalog-info {
+    padding: 17px;
+}
+
+.catalog-type {
+    color: #e62429;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.catalog-info h3 {
+    margin: 7px 0;
+    font-size: 18px;
+}
+
+.catalog-info p {
+    color: #999;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.catalog-year {
+    color: #777;
+    margin-top: 8px;
+    font-size: 12px;
+}
+
+.empty-catalog {
+    text-align: center;
+    color: #777;
+    padding: 60px 0;
+}
+
+@media(max-width: 700px) {
+    .movies-hero {
+        padding: 55px 5% 25px;
+    }
+
+    .movies-hero h1 {
+        font-size: 30px;
+    }
+
+    .catalog-section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .catalog-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .catalog-poster,
+    .catalog-placeholder {
+        height: 220px;
+    }
+
+    .catalog-info {
+        padding: 12px;
+    }
+}
+
+/* ================= MOBILE ================= */
 
         @media(max-width: 700px) {
 

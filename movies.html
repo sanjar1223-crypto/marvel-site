@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvel Timeline — Фильмы и сериалы</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <a class="logo logo-link" href="index.html">
+        MARVEL<span>TIMELINE</span>
+    </a>
+
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="index.html#path">Мой путь</a>
+        <a href="movies.html" class="active-nav">Фильмы</a>
+        <a href="index.html#timeline">Хронология</a>
+        <a href="index.html#facts">Факты</a>
+        <a href="index.html#quiz">Викторина</a>
+    </nav>
+</header>
+
+<main class="movies-page">
+    <section class="movies-hero">
+        <h1>🎬 Фильмы и сериалы MCU</h1>
+        <p>Исследуй проекты Marvel по типу, фазе и названию.</p>
+
+        <div class="catalog-controls">
+            <input id="movieSearch" type="search"
+                   placeholder="Поиск фильма или сериала..."
+                   autocomplete="off">
+
+            <div class="catalog-buttons">
+                <button class="catalog-filter active" data-filter="all">Все</button>
+                <button class="catalog-filter" data-filter="movie">Фильмы</button>
+                <button class="catalog-filter" data-filter="series">Сериалы</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="catalog-section">
+        <div id="catalogGrid" class="catalog-grid"></div>
+        <p id="emptyCatalog" class="empty-catalog" hidden>
+            Ничего не найдено.
+        </p>
+    </section>
+</main>
+
+<footer>
+    <p><strong>MARVEL TIMELINE</strong> — фанатский проект о вселенной Marvel.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
