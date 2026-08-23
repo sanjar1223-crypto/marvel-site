@@ -60,7 +60,7 @@ const catalogItems = [
         year: 2021,
         type: "series",
         phase: "Фаза 4",
-        image: null,
+        image: "images/wandavision.jpg",
         description: "История Ванды и Вижна после событий Endgame."
     },
 
@@ -69,7 +69,7 @@ const catalogItems = [
         year: 2021,
         type: "series",
         phase: "Фаза 4",
-        image: null,
+        image: "images/loki.jpg",
         description: "Приключения альтернативной версии Локи."
     },
 
@@ -78,7 +78,7 @@ const catalogItems = [
         year: 2021,
         type: "series",
         phase: "Фаза 4",
-        image: null,
+        image: "images/what-if.jpg",
         description: "Альтернативные варианты событий MCU."
     },
 
@@ -87,7 +87,7 @@ const catalogItems = [
         year: 2021,
         type: "series",
         phase: "Фаза 4",
-        image: null,
+        image: "images/the-falcon-and-the-winter-soldier.jpg",
         description: "Сэм Уилсон и Баки Барнс продолжают историю наследия Капитана Америки."
     }
 ];
