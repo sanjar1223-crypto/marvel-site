@@ -741,4 +741,79 @@
             .path-box {
                 padding: 25px;
             }
+            /* ================= WATCH PAGE ================= */
+
+.watch-page {
+    min-height: 100vh;
+    padding: 130px 7% 80px;
+}
+
+.watch-container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.back-button {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: #aaa;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.back-button:hover {
+    color: #e62429;
+}
+
+.video-player {
+    width: 100%;
+    background: #000;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #292929;
+}
+
+.video-player video {
+    width: 100%;
+    display: block;
+    max-height: 650px;
+}
+
+.movie-details {
+    margin-top: 30px;
+}
+
+.movie-type {
+    color: #e62429;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.movie-details h1 {
+    font-size: 42px;
+    margin: 10px 0;
+}
+
+.movie-year {
+    color: #777;
+}
+
+.movie-description {
+    color: #999;
+    max-width: 700px;
+    line-height: 1.6;
+    margin-top: 15px;
+}
+
+@media (max-width: 700px) {
+
+    .watch-page {
+        padding: 110px 5% 60px;
+    }
+
+    .movie-details h1 {
+        font-size: 30px;
+    }
+
+}
         }
