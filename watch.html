@@ -37,10 +37,11 @@
 
         <div class="video-player">
 
-            <video controls poster="images/iron-man.jpg">
+            <video id="watchVideo" controls>
 
                 <source
-                    src="videos/iron-man.mp4"
+                    id="videoSource"
+                    src=""
                     type="video/mp4"
                 >
 
@@ -53,21 +54,13 @@
 
         <div class="movie-details">
 
-            <span class="movie-type">
-                ФИЛЬМ • PHASE 1
-            </span>
+            <span id="watchType" class="movie-type"></span>
 
-            <h1>Iron Man</h1>
+            <h1 id="watchTitle">Фильм</h1>
 
-            <p class="movie-year">
-                2008
-            </p>
+            <p id="watchYear" class="movie-year"></p>
 
-            <p class="movie-description">
-                Начало истории Тони Старка и одной из
-                главных историй кинематографической
-                вселенной Marvel.
-            </p>
+            <p id="watchDescription" class="movie-description"></p>
 
         </div>
 
@@ -88,5 +81,6 @@
 
 </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>

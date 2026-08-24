@@ -171,6 +171,14 @@ function renderCatalog() {
                     ${item.year} • ${item.phase}
                 </div>
 
+
+                <button
+                    class="watch-button"
+                    onclick="openWatchPage('${encodeURIComponent(item.title)}')"
+                >
+                    ▶ Смотреть
+                </button>
+
             </div>
 
         </article>
@@ -188,7 +196,6 @@ function renderCatalog() {
 
     }
 }
-
 
 
 // ================= НАСТРОЙКА КАТАЛОГА =================
@@ -241,15 +248,197 @@ function setupCatalog() {
         });
 
 
-    // Первый запуск
     renderCatalog();
 }
 
+
+// ================= ОТКРЫТИЕ ПЛЕЕРА =================
+
+function openWatchPage(title) {
+
+    window.location.href =
+        "watch.html?movie=" + title;
+
+}
+
+
+// ================= СТРАНИЦА ПРОСМОТРА =================
+
+function setupWatchPage() {
+
+    const titleElement =
+        document.getElementById("watchTitle");
+
+    if (!titleElement) return;
+
+
+    const params =
+        new URLSearchParams(
+            window.location.search
+        );
+
+    const movieTitle =
+        params.get("movie");
+
+
+    if (!movieTitle) {
+
+        titleElement.textContent =
+            "Фильм не выбран";
+
+        return;
+    }
+
+
+    const item =
+        catalogItems.find(
+            movie =>
+                movie.title.toLowerCase() ===
+                movieTitle.toLowerCase()
+        );
+
+
+    if (!item) {
+
+        titleElement.textContent =
+            "Фильм не найден";
+
+        return;
+    }
+
+
+    document.title =
+        "Marvel Timeline — " +
+        item.title;
+
+
+    titleElement.textContent =
+        item.title;
+
+
+    const yearElement =
+        document.getElementById("watchYear");
+
+    const descriptionElement =
+        document.getElementById(
+            "watchDescription"
+        );
+
+    const typeElement =
+        document.getElementById(
+            "watchType"
+        );
+
+    const videoElement =
+        document.getElementById(
+            "watchVideo"
+        );
+
+    const sourceElement =
+        document.getElementById(
+            "videoSource"
+        );
+
+
+    if (yearElement) {
+
+        yearElement.textContent =
+            item.year +
+            " • " +
+            item.phase;
+
+    }
+
+
+    if (descriptionElement) {
+
+        descriptionElement.textContent =
+            item.description;
+
+    }
+
+
+    if (typeElement) {
+
+        typeElement.textContent =
+            (
+                item.type === "movie"
+                    ? "ФИЛЬМ"
+                    : "СЕРИАЛ"
+            ) +
+            " • " +
+            item.phase;
+
+    }
+
+
+    if (videoElement && item.image) {
+
+        videoElement.poster =
+            item.image;
+
+    }
+
+
+    if (videoElement && sourceElement) {
+
+        sourceElement.src =
+            "videos/" +
+            getVideoFileName(
+                item.title
+            );
+
+        videoElement.load();
+
+    }
+
+}
+
+
+// ================= ВИДЕОФАЙЛЫ =================
+
+function getVideoFileName(title) {
+
+    const names = {
+
+        "Iron Man":
+            "iron-man.mp4",
+
+        "Iron Man 2":
+            "iron-man-2.mp4",
+
+        "The Avengers":
+            "the-avengers.mp4",
+
+        "Captain America: Civil War":
+            "civil-war.mp4",
+
+        "Avengers: Infinity War":
+            "infinity-war.mp4",
+
+        "Avengers: Endgame":
+            "endgame.mp4"
+
+    };
+
+
+    return (
+        names[title] ||
+        "placeholder.mp4"
+    );
+
+}
 
 
 // ================= ЗАПУСК =================
 
 document.addEventListener(
     "DOMContentLoaded",
-    setupCatalog
+    () => {
+
+        setupCatalog();
+
+        setupWatchPage();
+
+    }
 );

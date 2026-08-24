@@ -817,3 +817,23 @@
 
 }
         }
+
+/* ================= WATCH BUTTON ================= */
+
+.watch-button {
+    width: 100%;
+    margin-top: 14px;
+    padding: 11px 15px;
+    border: none;
+    border-radius: 9px;
+    background: #e62429;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.watch-button:hover {
+    background: #ff3035;
+    transform: translateY(-2px);
+}
