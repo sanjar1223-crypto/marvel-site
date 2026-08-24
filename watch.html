@@ -14,7 +14,7 @@
 
 <header>
 
-    <a class="logo logo-link" href="index.html">
+    <a href="index.html" class="logo">
         MARVEL<span>TIMELINE</span>
     </a>
 
@@ -28,43 +28,62 @@
 
 <main class="watch-page">
 
-    <section class="watch-container">
+    <div class="watch-container">
 
         <a href="movies.html" class="back-button">
             ← Назад к фильмам
         </a>
 
 
+        <!-- ПЛЕЕР -->
+
         <div class="video-player">
 
-            <video id="watchVideo" controls>
-
+            <video
+                id="watchVideo"
+                controls
+            >
                 <source
                     id="videoSource"
                     src=""
                     type="video/mp4"
                 >
 
-                Ваш браузер не поддерживает воспроизведение видео.
-
+                Ваш браузер не поддерживает видео.
             </video>
 
         </div>
 
 
+        <!-- ИНФОРМАЦИЯ О ФИЛЬМЕ -->
+
         <div class="movie-details">
 
-            <span id="watchType" class="movie-type"></span>
+            <span
+                id="watchType"
+                class="movie-type">
+            </span>
 
-            <h1 id="watchTitle">Фильм</h1>
 
-            <p id="watchYear" class="movie-year"></p>
+            <h1 id="watchTitle">
+                Загрузка...
+            </h1>
 
-            <p id="watchDescription" class="movie-description"></p>
+
+            <p
+                id="watchYear"
+                class="movie-year">
+            </p>
+
+
+            <p
+                id="watchDescription"
+                class="movie-description">
+            </p>
 
         </div>
 
-    </section>
+    </div>
 
 </main>
 
@@ -76,11 +95,13 @@
     </p>
 
     <p>
-        Fan project • Not affiliated with Marvel Studios
+        Fan project
     </p>
 
 </footer>
 
-    <script src="script.js"></script>
+
+<script src="script.js"></script>
+
 </body>
 </html>
