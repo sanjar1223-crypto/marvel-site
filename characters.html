@@ -1,131 +1,312 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marvel Timeline — Персонажи</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Персонажи — Marvel Timeline</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header>
-    <a href="index.html" class="logo logo-link">MARVEL<span>TIMELINE</span></a>
-    <nav>
-        <a href="index.html">Главная</a>
-        <a href="movies.html">Фильмы и сериалы</a>
-        <a href="characters.html" class="active-nav">Персонажи</a>
-    </nav>
-</header>
+    <!-- HEADER -->
+    <header>
 
-<main class="characters-page">
+        <a href="index.html" class="logo-link">
+            <div class="logo">
+                MARVEL<span>TIMELINE</span>
+            </div>
+        </a>
 
-    <section class="characters-hero">
-        <h1>👥 Персонажи MCU</h1>
-        <p>Главные герои и персонажи вселенной Marvel. Нажми на карточку, чтобы узнать больше.</p>
-    </section>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="movies.html">Фильмы и сериалы</a>
+            <a href="characters.html">Персонажи</a>
+        </nav>
 
-    <section class="characters-section">
-        <div class="characters-grid">
+    </header>
 
-            <a href="character.html?hero=iron-man" class="character-card">
-                <img src="images/iron-man-character.jpg" alt="iron-man">
-                <div class="character-info">
-                    <span>ГЕРОЙ</span>
-                    <h2>Iron Man</h2>
-                    <p>Гениальный изобретатель и один из основателей Avengers.</p>
-                </div>
-            </a>
 
-            <a href="character.html?hero=captain-america" class="character-card">
-                <img src="images/captain-america.jpg" alt="captain-america">
-                <div class="character-info">
-                    <span>ГЕРОЙ</span>
-                    <h2>Captain America</h2>
-                    <p>Суперсолдат и один из главных лидеров Avengers.</p>
-                </div>
-            </a>
+    <!-- PAGE -->
+    <main class="characters-page">
 
-            <a href="character.html?hero=thor" class="character-card">
-                <img src="images/thor.jpg" alt="thor">
-                <div class="character-info">
-                    <span>ГЕРОЙ</span>
-                    <h2>Thor</h2>
-                    <p>Асгардский герой, владеющий силой грома.</p>
-                </div>
-            </a>
+        <!-- TITLE -->
+        <section class="characters-hero">
 
-            <a href="character.html?hero=hulk" class="character-card">
-                <img src="images/hulk.jpg" alt="hulk">
-                <div class="character-info">
-                    <span>ГЕРОЙ</span>
-                    <h2>Hulk</h2>
-                    <p>Учёный Брюс Бэннер, обладающий огромной силой.</p>
-                </div>
-            </a>
+            <h1>Персонажи Marvel</h1>
 
-            <a href="character.html?hero=spider-man" class="character-card">
-                <img src="images/spider-man.jpg" alt="spider-man">
-                <div class="character-info">
-                    <span>ГЕРОЙ</span>
-                    <h2>Spider-Man</h2>
-                    <p>Молодой герой с паучьими способностями.</p>
-                </div>
-            </a>
+            <p>
+                Познакомься с главными героями и персонажами
+                киновселенной Marvel.
+            </p>
 
-            <a href="character.html?hero=black-widow" class="character-card">
-                <img src="images/black-widow.jpg" alt="black-widow">
-                <div class="character-info">
-                    <span>ГЕРОЙ</span>
-                    <h2>Black Widow</h2>
-                    <p>Опытная шпионка и участница команды Avengers.</p>
-                </div>
-            </a>
+        </section>
 
-            <a href="character.html?hero=doctor-strange" class="character-card">
-                <img src="images/doctor-strange.jpg" alt="doctor-strange">
-                <div class="character-info">
-                    <span>ГЕРОЙ</span>
-                    <h2>Doctor Strange</h2>
-                    <p>Мастер мистических искусств и защитник Земли.</p>
-                </div>
-            </a>
 
-            <a href="character.html?hero=black-panther" class="character-card">
-                <img src="images/black-panther.jpg" alt="black-panther">
-                <div class="character-info">
-                    <span>ГЕРОЙ</span>
-                    <h2>Black Panther</h2>
-                    <p>Король Ваканды и её защитник.</p>
-                </div>
-            </a>
+        <!-- CHARACTERS -->
+        <section class="characters-section">
 
-            <a href="character.html?hero=wanda" class="character-card">
-                <img src="images/wanda.jpg" alt="wanda">
-                <div class="character-info">
-                    <span>ГЕРОЙ</span>
-                    <h2>Wanda Maximoff</h2>
-                    <p>Могущественная героиня с необычными способностями.</p>
-                </div>
-            </a>
+            <div class="characters-grid">
 
-            <a href="character.html?hero=loki" class="character-card">
-                <img src="images/loki.jpg" alt="loki">
-                <div class="character-info">
-                    <span>ПЕРСОНАЖ</span>
-                    <h2>Loki</h2>
-                    <p>Хитрый асгардец, связанный с историей Тора.</p>
-                </div>
-            </a>
 
-        </div>
-    </section>
-</main>
+                <!-- IRON MAN -->
+                <a href="#" class="character-card">
 
-<footer>
-    <p><strong>MARVEL TIMELINE</strong></p>
-    <p style="margin-top:10px;">Твой путь по вселенной MCU.</p>
-    <p style="margin-top:20px;">Fan project • Not affiliated with Marvel Studios</p>
-</footer>
+                    <img
+                        src="images/iron-man-character.jpg"
+                        alt="Iron Man"
+                    >
+
+                    <div class="character-info">
+
+                        <span>ГЕРОЙ</span>
+
+                        <h2>Iron Man</h2>
+
+                        <p>
+                            Гениальный изобретатель и один
+                            из основателей Avengers.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+                <!-- CAPTAIN AMERICA -->
+                <a href="#" class="character-card">
+
+                    <img
+                        src="images/captain-america-character.jpg"
+                        alt="Captain America"
+                    >
+
+                    <div class="character-info">
+
+                        <span>ГЕРОЙ</span>
+
+                        <h2>Captain America</h2>
+
+                        <p>
+                            Символ героизма и один из главных
+                            лидеров Avengers.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+                <!-- THOR -->
+                <a href="#" class="character-card">
+
+                    <img
+                        src="images/thor-character.jpg"
+                        alt="Thor"
+                    >
+
+                    <div class="character-info">
+
+                        <span>ГЕРОЙ</span>
+
+                        <h2>Thor</h2>
+
+                        <p>
+                            Асгардский герой, обладающий
+                            силой грома.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+                <!-- HULK -->
+                <a href="#" class="character-card">
+
+                    <img
+                        src="images/hulk-character.jpg"
+                        alt="Hulk"
+                    >
+
+                    <div class="character-info">
+
+                        <span>ГЕРОЙ</span>
+
+                        <h2>Hulk</h2>
+
+                        <p>
+                            Учёный Брюс Бэннер, обладающий
+                            огромной силой.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+                <!-- SPIDER-MAN -->
+                <a href="#" class="character-card">
+
+                    <img
+                        src="images/spider-man-character.jpg"
+                        alt="Spider-Man"
+                    >
+
+                    <div class="character-info">
+
+                        <span>ГЕРОЙ</span>
+
+                        <h2>Spider-Man</h2>
+
+                        <p>
+                            Молодой герой с паучьими
+                            способностями.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+                <!-- BLACK WIDOW -->
+                <a href="#" class="character-card">
+
+                    <img
+                        src="images/black-widow-character.jpg"
+                        alt="Black Widow"
+                    >
+
+                    <div class="character-info">
+
+                        <span>ГЕРОЙ</span>
+
+                        <h2>Black Widow</h2>
+
+                        <p>
+                            Опытная шпионка и участница
+                            команды Avengers.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+                <!-- DOCTOR STRANGE -->
+                <a href="#" class="character-card">
+
+                    <img
+                        src="images/doctor-strange-character.jpg"
+                        alt="Doctor Strange"
+                    >
+
+                    <div class="character-info">
+
+                        <span>ГЕРОЙ</span>
+
+                        <h2>Doctor Strange</h2>
+
+                        <p>
+                            Мастер мистических искусств
+                            и защитник Земли.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+                <!-- BLACK PANTHER -->
+                <a href="#" class="character-card">
+
+                    <img
+                        src="images/black-panther-character.jpg"
+                        alt="Black Panther"
+                    >
+
+                    <div class="character-info">
+
+                        <span>ГЕРОЙ</span>
+
+                        <h2>Black Panther</h2>
+
+                        <p>
+                            Король Ваканды и её защитник.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+                <!-- WANDA -->
+                <a href="#" class="character-card">
+
+                    <img
+                        src="images/wanda-character.jpg"
+                        alt="Wanda Maximoff"
+                    >
+
+                    <div class="character-info">
+
+                        <span>ГЕРОЙ</span>
+
+                        <h2>Wanda Maximoff</h2>
+
+                        <p>
+                            Могущественная героиня
+                            с невероятными способностями.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+                <!-- LOKI -->
+                <a href="#" class="character-card">
+
+                    <img
+                        src="images/loki-character.jpg"
+                        alt="Loki"
+                    >
+
+                    <div class="character-info">
+
+                        <span>ПЕРСОНАЖ</span>
+
+                        <h2>Loki</h2>
+
+                        <p>
+                            Хитрый асгардец, связанный
+                            с историей Тора.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 <strong>Marvel Timeline</strong>
+        </p>
+
+    </footer>
+
 
 </body>
 </html>
