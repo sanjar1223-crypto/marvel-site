@@ -1,879 +1,24 @@
 /* =========================================================
-   RESET
+   CHARACTER DETAIL PAGE
 ========================================================= */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #080808;
-    color: white;
-}
-
-
-/* =========================================================
-   HEADER
-========================================================= */
-
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-
-    padding: 18px 6%;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    background: rgba(5, 5, 5, 0.85);
-
-    backdrop-filter: blur(15px);
-
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.logo {
-    font-size: 25px;
-    font-weight: 900;
-    letter-spacing: 2px;
-}
-
-.logo span {
-    color: #e62429;
-}
-
-.logo-link {
-    color: white;
-    text-decoration: none;
-}
-
-nav {
-    display: flex;
-    gap: 25px;
-}
-
-nav a {
-    color: #ddd;
-    text-decoration: none;
-    font-size: 14px;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: #e62429;
-}
-
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero {
-    min-height: 100vh;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-
-    padding: 120px 20px 60px;
-
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(230, 36, 41, 0.25),
-            transparent 45%
-        ),
-        linear-gradient(
-            180deg,
-            #111 0%,
-            #080808 100%
-        );
-}
-
-.hero-content {
-    max-width: 900px;
-}
-
-.hero h1 {
-    font-size: clamp(55px, 10vw, 120px);
-
-    font-weight: 900;
-
-    letter-spacing: 8px;
-
-    margin-bottom: 20px;
-}
-
-.hero h1 span {
-    color: #e62429;
-}
-
-.hero h2 {
-    font-size: clamp(22px, 4vw, 40px);
-
-    margin-bottom: 20px;
-}
-
-.hero p {
-    color: #aaa;
-
-    font-size: 18px;
-
-    max-width: 650px;
-
-    margin: auto;
-
-    line-height: 1.6;
-}
-
-
-/* =========================================================
-   BUTTONS
-========================================================= */
-
-.hero-buttons {
-    margin-top: 40px;
-
-    display: flex;
-    justify-content: center;
-
-    gap: 15px;
-
-    flex-wrap: wrap;
-}
-
-.btn {
-    border: none;
-
-    padding: 16px 30px;
-
-    border-radius: 8px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-
-    font-size: 15px;
-}
-
-.btn-red {
-    background: #e62429;
-    color: white;
-}
-
-.btn-red:hover {
-    background: #ff3035;
-    transform: translateY(-3px);
-}
-
-.btn-dark {
-    background: #191919;
-
-    color: white;
-
-    border: 1px solid #333;
-}
-
-.btn-dark:hover {
-    background: #252525;
-}
-
-
-/* =========================================================
-   GENERAL SECTIONS
-========================================================= */
-
-section {
-    padding: 100px 7%;
-}
-
-.section-title {
-    font-size: 38px;
-    margin-bottom: 15px;
-}
-
-.section-description {
-    color: #999;
-
-    margin-bottom: 40px;
-
-    max-width: 650px;
-
-    line-height: 1.6;
-}
-
-
-/* =========================================================
-   POPULAR MOVIES
-========================================================= */
-
-.movies {
-    display: grid;
-
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(200px, 1fr)
-        );
-
-    gap: 20px;
-}
-
-.movie-card {
-    min-height: 300px;
-
-    padding: 20px;
-
-    border-radius: 15px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #191919,
-            #0e0e0e
-        );
-
-    border: 1px solid #292929;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: flex-end;
-
-    transition: 0.35s;
-}
-
-.movie-card:hover {
-    transform: translateY(-8px);
-
-    border-color: #e62429;
-}
-
-.movie-poster {
-    width: 100%;
-
-    height: 280px;
-
-    object-fit: cover;
-
-    border-radius: 10px;
-
-    margin-bottom: 15px;
-
-    display: block;
-}
-
-.movie-number {
-    color: #e62429;
-
-    font-size: 14px;
-
-    margin-bottom: 8px;
-}
-
-.movie-card h3 {
-    font-size: 24px;
-
-    margin-bottom: 8px;
-}
-
-.movie-card p {
-    color: #888;
-}
-
-
-/* =========================================================
-   MY PATH
-========================================================= */
-
-#path {
-    background: #0d0d0d;
-}
-
-.path-box {
-    max-width: 1000px;
-
-    margin: auto;
-
-    padding: 40px;
-
-    border-radius: 20px;
-
-    background: #151515;
-
-    border: 1px solid #292929;
-}
-
-.path-line {
-    margin-top: 40px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 0;
-}
-
-.path-item {
-    display: flex;
-
-    align-items: center;
-
-    gap: 20px;
-
-    padding: 18px;
-
-    background: #1b1b1b;
-
-    border-radius: 10px;
-
-    margin-bottom: 10px;
-}
-
-.path-number {
-    width: 40px;
-
-    height: 40px;
-
-    background: #e62429;
-
-    border-radius: 50%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-weight: bold;
-}
-
-.path-info h3 {
-    margin-bottom: 5px;
-}
-
-.path-info p {
-    color: #888;
-}
-
-
-/* =========================================================
-   TIMELINE
-========================================================= */
-
-.timeline {
-    position: relative;
-
-    max-width: 1100px;
-
-    margin: 60px auto;
-}
-
-
-/* =========================================================
-   SNAKE TIMELINE
-========================================================= */
-
-.snake-timeline {
-    width: 100%;
-
-    max-width: 1200px;
-
-    margin: 70px auto;
-
-    position: relative;
-}
-
-.snake-row {
-    position: relative;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 20px;
-
-    min-height: 470px;
-
-    align-items: start;
-}
-
-.snake-row.snake-reverse {
-    align-items: end;
-}
-
-
-/* horizontal line */
-
-.snake-row::before {
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    right: 0;
-
-    top: 50%;
-
-    height: 3px;
-
-    background: #e62429;
-
-    z-index: 0;
-}
-
-
-/* vertical connector */
-
-.snake-row:not(:last-child)::after {
-    content: "";
-
-    position: absolute;
-
-    width: 3px;
-
-    height: 80px;
-
-    background: #e62429;
-
-    right: 0;
-
-    top: 50%;
-}
-
-
-/* reverse connector */
-
-.snake-row.snake-reverse:not(:last-child)::after {
-    right: auto;
-
-    left: 0;
-
-    top: 50%;
-}
-
-
-/* timeline item */
-
-.snake-row .timeline-item {
-    width: 100%;
-
-    position: relative;
-
-    z-index: 2;
-
-    padding: 20px;
-}
-
-.snake-row .timeline-content {
-    background: #161616;
-
-    padding: 20px;
-
-    border-radius: 15px;
-
-    border: 1px solid #292929;
-
-    transition: 0.3s;
-}
-
-.snake-row .timeline-content:hover {
-    transform: translateY(-7px);
-
-    border-color: #e62429;
-}
-
-
-/* poster */
-
-.timeline-poster {
-    width: 100%;
-
-    height: 280px;
-
-    object-fit: cover;
-
-    border-radius: 10px;
-
-    margin-bottom: 15px;
-
-    display: block;
-}
-
-.timeline-content span {
-    color: #e62429;
-
-    font-size: 13px;
-}
-
-.timeline-content h3 {
-    margin: 8px 0;
-
-    font-size: 19px;
-}
-
-.timeline-content p {
-    color: #999;
-
-    line-height: 1.5;
-
-    font-size: 13px;
-}
-
-
-/* =========================================================
-   FACTS
-========================================================= */
-
-.fact-box {
-    max-width: 800px;
-
-    margin: auto;
-
-    padding: 50px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #191919,
-            #101010
-        );
-
-    border: 1px solid #292929;
-
-    border-radius: 20px;
-
-    text-align: center;
-}
-
-.fact-icon {
-    font-size: 50px;
-
-    margin-bottom: 20px;
-}
-
-.fact-box h3 {
-    font-size: 28px;
-
-    margin-bottom: 20px;
-}
-
-.fact-box p {
-    color: #aaa;
-
-    line-height: 1.7;
-}
-
-
-/* =========================================================
-   FEATURES
-========================================================= */
-
-.features {
-    display: grid;
-
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(230px, 1fr)
-        );
-
-    gap: 20px;
-}
-
-.feature {
-    padding: 30px;
-
-    background: #141414;
-
-    border-radius: 15px;
-
-    border: 1px solid #292929;
-
-    transition: 0.3s;
-}
-
-.feature:hover {
-    transform: translateY(-5px);
-
-    border-color: #e62429;
-}
-
-.feature-icon {
-    font-size: 35px;
-
-    margin-bottom: 15px;
-}
-
-.feature h3 {
-    margin-bottom: 10px;
-}
-
-.feature p {
-    color: #888;
-
-    line-height: 1.5;
-}
-
-
-/* ссылка-карточка */
-
-.feature-link {
-    display: block;
-
-    color: white;
-
-    text-decoration: none;
-}
-
-.feature-action {
-    display: inline-block;
-
-    margin-top: 18px;
-
-    color: #e62429;
-
-    font-size: 14px;
-
-    font-weight: bold;
-}
-
-
-/* =========================================================
-   QUIZ
-========================================================= */
-
-.quiz {
-    max-width: 800px;
-
-    margin: auto;
-
-    padding: 40px;
-
-    background: #151515;
-
-    border-radius: 20px;
-}
-
-.quiz-question {
-    font-size: 24px;
-
-    margin-bottom: 25px;
-}
-
-.answers {
-    display: grid;
-
-    gap: 12px;
-}
-
-.answer {
-    padding: 15px;
-
-    background: #202020;
-
-    color: white;
-
-    border: 1px solid #333;
-
-    border-radius: 8px;
-
-    cursor: pointer;
-
-    text-align: left;
-
-    transition: 0.2s;
-}
-
-.answer:hover {
-    border-color: #e62429;
-}
-
-
-/* =========================================================
-   MOVIES & SERIES CATALOG
-========================================================= */
-
-.movies-page {
-    min-height: 100vh;
-
-    padding-top: 90px;
-}
-
-.movies-hero {
-    text-align: center;
-
-    padding: 80px 7% 35px;
-}
-
-.movies-hero h1 {
-    font-size: 42px;
-
-    margin-bottom: 15px;
-}
-
-.movies-hero p {
-    color: #999;
-
-    max-width: 650px;
-
-    margin: auto;
-
-    line-height: 1.6;
-}
-
-.catalog-section {
-    padding-top: 25px;
-}
-
-.catalog-grid {
-    max-width: 1200px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(220px, 1fr)
-        );
-
-    gap: 20px;
-}
-
-.catalog-card {
-    background: #141414;
-
-    border: 1px solid #292929;
-
-    border-radius: 15px;
-
-    overflow: hidden;
-
-    text-decoration: none;
-
-    color: white;
-
-    transition: 0.3s;
-}
-
-.catalog-card:hover {
-    transform: translateY(-7px);
-
-    border-color: #e62429;
-}
-
-.catalog-poster,
-.catalog-placeholder {
-    width: 100%;
-
-    height: 285px;
-}
-
-.catalog-poster {
-    object-fit: cover;
-
-    display: block;
-
-    background: #0c0c0c;
-}
-
-.catalog-placeholder {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background:
-        linear-gradient(
-            145deg,
-            #171717,
-            #090909
-        );
-
-    color: #777;
-
-    font-size: 45px;
-}
-
-.catalog-info {
-    padding: 17px;
-}
-
-.catalog-type {
-    color: #e62429;
-
-    font-size: 12px;
-
-    font-weight: 700;
-
-    text-transform: uppercase;
-}
-
-.catalog-info h3 {
-    margin: 7px 0;
-
-    font-size: 18px;
-}
-
-.catalog-info p {
-    color: #999;
-
-    font-size: 13px;
-
-    line-height: 1.5;
-}
-
-.catalog-year {
-    color: #777;
-
-    margin-top: 8px;
-
-    font-size: 12px;
-}
-
-.empty-catalog {
-    text-align: center;
-
-    color: #777;
-
-    padding: 60px 0;
-}
-
-
-/* =========================================================
-   WATCH PAGE / VIDEO PLAYER
-========================================================= */
-
-.watch-page {
+.character-detail-page {
     min-height: 100vh;
 
     padding: 130px 7% 80px;
+
+    background: #080808;
 }
 
-.watch-container {
-    max-width: 1100px;
 
-    margin: auto;
+.character-detail-container {
+    max-width: 1050px;
+
+    margin: 0 auto;
 }
+
+
+/* Кнопка назад */
 
 .back-button {
     display: inline-block;
@@ -884,313 +29,148 @@ section {
 
     text-decoration: none;
 
+    font-size: 15px;
+
     transition: 0.3s;
 }
+
 
 .back-button:hover {
     color: #e62429;
 }
 
-.video-player {
-    width: 100%;
 
-    background: #000;
-
-    border-radius: 15px;
-
-    overflow: hidden;
-
-    border: 1px solid #292929;
-}
-
-.video-player video {
-    width: 100%;
-
-    display: block;
-
-    max-height: 650px;
-}
-
-.movie-details {
-    margin-top: 30px;
-}
-
-.movie-type {
-    color: #e62429;
-
-    font-size: 13px;
-
-    font-weight: bold;
-}
-
-.movie-details h1 {
-    font-size: 42px;
-
-    margin: 10px 0;
-}
-
-.movie-year {
-    color: #777;
-}
-
-.movie-description {
-    color: #999;
-
-    max-width: 700px;
-
-    line-height: 1.6;
-
-    margin-top: 15px;
-}
-
-
-/* =========================================================
-   CHARACTERS PAGE
-========================================================= */
-
-.characters-page {
-    padding-top: 90px;
-
-    min-height: 100vh;
-}
-
-.characters-hero {
-    text-align: center;
-
-    padding: 80px 7% 35px;
-}
-
-.characters-hero h1 {
-    font-size: 42px;
-
-    margin-bottom: 15px;
-}
-
-.characters-hero p {
-    color: #999;
-
-    max-width: 650px;
-
-    margin: auto;
-
-    line-height: 1.6;
-}
-
-.characters-section {
-    padding: 25px 7% 90px;
-}
-
-.characters-grid {
-    max-width: 1200px;
-
-    margin: 0 auto;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(220px, 1fr)
-        );
-
-    gap: 22px;
-}
-
-
-/* карточка персонажа */
-
-.character-card {
-    background: #141414;
-
-    border: 1px solid #292929;
-
-    border-radius: 15px;
-
-    overflow: hidden;
-
-    color: white;
-
-    text-decoration: none;
-
-    transition: 0.25s;
-}
-
-.character-card:hover {
-    transform: translateY(-7px);
-
-    border-color: #e62429;
-}
-
-
-/* постер персонажа */
-
-.character-card img {
-    width: 100%;
-
-    height: 300px;
-
-    object-fit: cover;
-
-    display: block;
-}
-
-.character-info {
-    padding: 17px;
-}
-
-.character-info span {
-    color: #e62429;
-
-    font-size: 12px;
-
-    font-weight: 700;
-}
-
-.character-info h2 {
-    margin: 7px 0;
-
-    font-size: 20px;
-}
-
-.character-info p {
-    color: #999;
-
-    font-size: 13px;
-
-    line-height: 1.5;
-}
-
-
-/* =========================================================
-   CHARACTER DETAIL PAGE
-========================================================= */
-
-.character-detail-page {
-    min-height: 100vh;
-
-    padding: 130px 7% 80px;
-}
-
-.character-detail-container {
-    max-width: 1000px;
-
-    margin: auto;
-}
+/* Основная карточка */
 
 .character-detail-card {
-    margin-top: 25px;
-
     display: grid;
 
-    grid-template-columns:
-        360px 1fr;
+    grid-template-columns: 360px 1fr;
 
-    gap: 35px;
+    gap: 40px;
 
-    padding: 25px;
+    padding: 28px;
 
     background: #141414;
 
     border: 1px solid #292929;
 
     border-radius: 18px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35);
 }
 
 
-/* большой постер персонажа */
+/* Постер персонажа */
 
 .character-detail-card > img {
     width: 100%;
 
-    height: 450px;
+    height: 500px;
 
     object-fit: cover;
 
+    display: block;
+
     border-radius: 12px;
+
+    background: #0c0c0c;
 }
+
+
+/* Информация */
 
 .character-detail-info {
-    padding: 25px 0;
+    padding: 15px 5px;
 }
 
+
 .character-detail-type {
+    display: inline-block;
+
     color: #e62429;
 
     font-size: 12px;
 
-    font-weight: 700;
+    font-weight: 800;
+
+    letter-spacing: 1px;
 }
 
+
 .character-detail-info h1 {
-    font-size: 42px;
+    font-size: 48px;
+
+    line-height: 1.1;
 
     margin: 12px 0 20px;
 }
 
-.character-detail-info p {
-    color: #999;
+
+.character-detail-info > p {
+    color: #aaa;
+
+    font-size: 16px;
 
     line-height: 1.7;
 
     max-width: 600px;
+
+    margin-bottom: 30px;
 }
 
 
-/* информация */
+/* =========================================================
+   CHARACTER FACTS
+========================================================= */
 
 .character-facts {
     display: grid;
 
     gap: 14px;
-
-    margin-top: 28px;
 }
 
+
 .character-facts div {
-    padding: 14px 16px;
+    padding: 16px 18px;
 
     background: #0e0e0e;
 
     border: 1px solid #292929;
 
     border-radius: 10px;
+
+    transition: 0.25s;
 }
+
+
+.character-facts div:hover {
+    border-color: #e62429;
+
+    transform: translateX(4px);
+}
+
 
 .character-facts strong {
     display: block;
 
-    margin-bottom: 5px;
+    margin-bottom: 7px;
+
+    color: white;
 
     font-size: 14px;
 }
+
 
 .character-facts span {
     display: block;
 
     color: #999;
 
+    font-size: 14px;
+
     line-height: 1.5;
-
-    font-size: 13px;
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer {
-    padding: 50px 7%;
-
-    text-align: center;
-
-    background: #050505;
-
-    color: #666;
-}
-
-footer strong {
-    color: white;
 }
 
 
@@ -1198,230 +178,58 @@ footer strong {
    MOBILE
 ========================================================= */
 
-@media (max-width: 700px) {
-
-    /* HEADER */
-
-    nav {
-        display: none;
-    }
-
-
-    /* HERO */
-
-    .hero h1 {
-        letter-spacing: 3px;
-    }
-
-
-    /* SECTIONS */
-
-    section {
-        padding: 70px 5%;
-    }
-
-
-    /* MOVIES */
-
-    .movies {
-        grid-template-columns:
-            repeat(
-                2,
-                minmax(0, 1fr)
-            );
-
-        gap: 12px;
-    }
-
-    .movie-poster {
-        height: 220px;
-    }
-
-    .movie-card {
-        padding: 12px;
-    }
-
-    .movie-card h3 {
-        font-size: 18px;
-    }
-
-
-    /* TIMELINE */
-
-    .snake-timeline {
-        gap: 25px;
-
-        padding-left: 0;
-    }
-
-    .snake-row,
-    .snake-row.snake-reverse {
-        display: flex;
-
-        flex-direction: column;
-
-        align-items: stretch;
-
-        gap: 20px;
-
-        min-height: 0;
-    }
-
-    .snake-row::before,
-    .snake-row:not(:last-child)::after,
-    .snake-row:not(.snake-reverse):not(:last-child)::after,
-    .snake-row.snake-reverse:not(:last-child)::after {
-        display: none;
-    }
-
-    .snake-row .timeline-item {
-        width: 100%;
-
-        height: auto;
-
-        padding: 0;
-
-        left: 0;
-    }
-
-    .snake-row .timeline-content {
-        text-align: left;
-    }
-
-    .timeline-poster {
-        height: 300px;
-    }
-
-
-    /* PATH */
-
-    .path-box {
-        padding: 25px;
-    }
-
-
-    /* CATALOG */
-
-    .movies-hero {
-        padding: 55px 5% 25px;
-    }
-
-    .movies-hero h1 {
-        font-size: 30px;
-    }
-
-    .catalog-section {
-        padding-left: 5%;
-
-        padding-right: 5%;
-    }
-
-    .catalog-grid {
-        grid-template-columns:
-            repeat(
-                2,
-                minmax(0, 1fr)
-            );
-
-        gap: 12px;
-    }
-
-    .catalog-poster,
-    .catalog-placeholder {
-        height: 220px;
-    }
-
-    .catalog-info {
-        padding: 12px;
-    }
-
-
-    /* WATCH */
-
-    .watch-page {
-        padding: 110px 5% 60px;
-    }
-
-    .movie-details h1 {
-        font-size: 30px;
-    }
-
-
-    /* CHARACTERS */
-
-    .characters-hero {
-        padding: 55px 5% 25px;
-    }
-
-    .characters-hero h1 {
-        font-size: 30px;
-    }
-
-    .characters-section {
-        padding-left: 5%;
-
-        padding-right: 5%;
-    }
-
-    .characters-grid {
-        grid-template-columns:
-            repeat(
-                2,
-                minmax(0, 1fr)
-            );
-
-        gap: 12px;
-    }
-
-    .character-card img {
-        height: 220px;
-    }
-
-    .character-info {
-        padding: 12px;
-    }
-
-
-    /* CHARACTER DETAIL */
+@media (max-width: 800px) {
 
     .character-detail-page {
         padding: 110px 5% 60px;
     }
 
+
     .character-detail-card {
         grid-template-columns: 1fr;
 
+        gap: 25px;
+
         padding: 18px;
     }
+
+
+    .character-detail-card > img {
+        height: 420px;
+    }
+
+
+    .character-detail-info {
+        padding: 5px;
+    }
+
+
+    .character-detail-info h1 {
+        font-size: 36px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
 
     .character-detail-card > img {
         height: 350px;
     }
 
-    .character-detail-info {
-        padding: 10px 0;
-    }
 
     .character-detail-info h1 {
         font-size: 30px;
     }
 
 
-    /* FACT */
-
-    .fact-box {
-        padding: 30px 20px;
+    .character-detail-info > p {
+        font-size: 14px;
     }
 
 
-    /* QUIZ */
-
-    .quiz {
-        padding: 25px;
-    }
-
-    .quiz-question {
-        font-size: 20px;
+    .character-facts div {
+        padding: 14px;
     }
 
 }

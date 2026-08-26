@@ -385,10 +385,14 @@ const data = {
 
 
 
+const params = new URLSearchParams(
+    window.location.search
+);
+
 const key =
-    new URLSearchParams(
-        window.location.search
-    ).get("hero") || "iron-man";
+    params.get("name") ||
+    params.get("hero") ||
+    "iron-man";
 
 
 
