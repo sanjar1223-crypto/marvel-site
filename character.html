@@ -8,31 +8,56 @@
 </head>
 <body>
 <header>
-    <a href="index.html" class="logo logo-link">MARVEL<span>TIMELINE</span></a>
-    <nav>
-        <a href="index.html">Главная</a>
-        <a href="movies.html">Фильмы и сериалы</a>
-        <a href="characters.html" class="active-nav">Персонажи</a>
-    </nav>
+<a href="index.html" class="logo logo-link">MARVEL<span>TIMELINE</span></a>
+<nav><a href="index.html">Главная</a><a href="movies.html">Фильмы и сериалы</a><a href="characters.html">Персонажи</a></nav>
 </header>
 
 <main class="character-detail-page">
-    <section class="character-detail-container">
-        <a href="characters.html" class="back-button">← Назад к персонажам</a>
-        <div class="character-detail-card">
-            <div class="character-detail-placeholder">👤</div>
-            <div class="character-detail-info">
-                <span class="character-detail-type">ПЕРСОНАЖ</span>
-                <h1>Персонаж</h1>
-                <p>Здесь будет подробная информация о выбранном герое.</p>
-            </div>
-        </div>
-    </section>
+<section class="character-detail-container">
+<a href="characters.html" class="back-button">← Назад к персонажам</a>
+<div class="character-detail-card">
+<img id="characterImage" src="" alt="">
+<div class="character-detail-info">
+<span class="character-detail-type">ПЕРСОНАЖ</span>
+<h1 id="characterName"></h1>
+<p id="characterDescription"></p>
+<div class="character-facts">
+<div><strong>Настоящее имя</strong><span id="realName"></span></div>
+<div><strong>Способности</strong><span id="powers"></span></div>
+<div><strong>Команда</strong><span id="team"></span></div>
+<div><strong>Первое появление</strong><span id="firstAppearance"></span></div>
+</div>
+</div>
+</div>
+</section>
 </main>
 
-<footer>
-<p><strong>MARVEL TIMELINE</strong></p>
-<p style="margin-top:20px;">Fan project • Not affiliated with Marvel Studios</p>
-</footer>
+<footer><p><strong>MARVEL TIMELINE</strong></p><p style="margin-top:20px;">Fan project • Not affiliated with Marvel Studios</p></footer>
+
+<script>
+const data = {
+"iron-man":["Iron Man","images/iron-man-character.jpg","Гениальный изобретатель и герой, создавший высокотехнологичный костюм.","Tony Stark","Высокий интеллект, инженерные навыки, бронекостюм","Avengers","Iron Man (2008)"],
+"captain-america":["Captain America","images/captain-america.jpg","Суперсолдат и один из главных лидеров Avengers.","Steve Rogers","Физическая сила, выносливость, боевые навыки, щит","Avengers","Captain America: The First Avenger (2011)"],
+"thor":["Thor","images/thor.jpg","Асгардский герой и сын Одина.","Thor Odinson","Сила, молнии, владение Мьёльниром","Avengers","Thor (2011)"],
+"hulk":["Hulk","images/hulk.jpg","Мощная форма Брюса Бэннера с огромной физической силой.","Bruce Banner","Огромная сила, выносливость, регенерация","Avengers","The Incredible Hulk (2008)"],
+"spider-man":["Spider-Man","images/spider-man.jpg","Молодой герой с паучьими способностями.","Peter Parker","Сила, ловкость, паучье чутьё, паутина","Avengers / союзники","Captain America: Civil War (2016)"],
+"black-widow":["Black Widow","images/black-widow.jpg","Опытная шпионка и мастер рукопашного боя.","Natasha Romanoff","Боевые навыки, шпионаж, тактика","Avengers","Iron Man 2 (2010)"],
+"doctor-strange":["Doctor Strange","images/doctor-strange.jpg","Мастер мистических искусств и защитник Земли.","Stephen Strange","Магия, порталы, заклинания, мистические артефакты","Masters of the Mystic Arts / Avengers","Doctor Strange (2016)"],
+"black-panther":["Black Panther","images/black-panther.jpg","Король Ваканды и её защитник.","T'Challa","Сила, ловкость, костюм Black Panther","Avengers / Wakanda","Captain America: Civil War (2016)"],
+"wanda":["Wanda Maximoff","images/wanda.jpg","Могущественная героиня с необычными способностями.","Wanda Maximoff","Телекинез, управление энергией, магия хаоса","Avengers","Captain America: The Winter Soldier (2014)"],
+"loki":["Loki","images/loki.jpg","Хитрый асгардец, мастер иллюзий и важный персонаж мультивселенной.","Loki Laufeyson","Магия, иллюзии, изменение формы, интеллект","Разные версии и союзники","Thor (2011)"]
+};
+const key = new URLSearchParams(location.search).get("hero") || "iron-man";
+const c = data[key] || data["iron-man"];
+document.title = "Marvel Timeline — " + c[0];
+document.getElementById("characterImage").src = c[1];
+document.getElementById("characterImage").alt = c[0];
+document.getElementById("characterName").textContent = c[0];
+document.getElementById("characterDescription").textContent = c[2];
+document.getElementById("realName").textContent = c[3];
+document.getElementById("powers").textContent = c[4];
+document.getElementById("team").textContent = c[5];
+document.getElementById("firstAppearance").textContent = c[6];
+</script>
 </body>
 </html>
