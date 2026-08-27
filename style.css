@@ -35,7 +35,7 @@ header {
     justify-content: space-between;
     align-items: center;
 
-    background: rgba(5, 5, 5, 0.88);
+    background: rgba(5, 5, 5, 0.85);
 
     backdrop-filter: blur(15px);
 
@@ -73,6 +73,10 @@ nav a:hover {
     color: #e62429;
 }
 
+.active-nav {
+    color: #e62429 !important;
+}
+
 
 /* =========================================================
    HERO
@@ -108,8 +112,11 @@ nav a:hover {
 
 .hero h1 {
     font-size: clamp(55px, 10vw, 120px);
+
     font-weight: 900;
+
     letter-spacing: 8px;
+
     margin-bottom: 20px;
 }
 
@@ -119,14 +126,19 @@ nav a:hover {
 
 .hero h2 {
     font-size: clamp(22px, 4vw, 40px);
+
     margin-bottom: 20px;
 }
 
 .hero p {
     color: #aaa;
+
     font-size: 18px;
+
     max-width: 650px;
+
     margin: auto;
+
     line-height: 1.6;
 }
 
@@ -139,6 +151,7 @@ nav a:hover {
     margin-top: 40px;
 
     display: flex;
+
     justify-content: center;
 
     gap: 15px;
@@ -164,17 +177,21 @@ nav a:hover {
 
 .btn-red {
     background: #e62429;
+
     color: white;
 }
 
 .btn-red:hover {
     background: #ff3035;
+
     transform: translateY(-3px);
 }
 
 .btn-dark {
     background: #191919;
+
     color: white;
+
     border: 1px solid #333;
 }
 
@@ -193,13 +210,17 @@ section {
 
 .section-title {
     font-size: 38px;
+
     margin-bottom: 15px;
 }
 
 .section-description {
     color: #999;
+
     margin-bottom: 40px;
+
     max-width: 650px;
+
     line-height: 1.6;
 }
 
@@ -360,51 +381,75 @@ section {
 
 
 /* =========================================================
-   CHRONOLOGY — SNAKE
+   CHRONOLOGY
+   SNAKE TIMELINE
 ========================================================= */
 
-.snake-timeline {
-    width: 100%;
+.timeline {
+    position: relative;
 
     max-width: 1200px;
 
     margin: 60px auto;
 }
 
+.snake-timeline {
+    width: 100%;
 
-/* Каждая строка */
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 80px;
+
+    padding: 20px 0;
+}
+
+
+/* ---------------------------------------------------------
+   ROW
+--------------------------------------------------------- */
 
 .snake-row {
     position: relative;
 
+    width: 100%;
+
     display: grid;
 
     grid-template-columns:
-        repeat(4, 1fr);
+        repeat(
+            4,
+            minmax(0, 1fr)
+        );
 
     gap: 24px;
 
-    margin-bottom: 110px;
+    align-items: stretch;
+
+    margin: 0;
+
+    min-height: 430px;
 }
 
 
 /* Каждая вторая строка идёт справа налево */
 
-.snake-row.snake-reverse {
+.snake-row:nth-child(even) {
     direction: rtl;
 }
 
 
-/* Текст внутри карточек остаётся слева направо */
+/* Но текст и карточки остаются нормальными */
 
-.snake-row.snake-reverse .timeline-item {
+.snake-row:nth-child(even) .timeline-item {
     direction: ltr;
 }
 
 
-/* =========================================================
-   КРАСНАЯ ЛИНИЯ
-========================================================= */
+/* ---------------------------------------------------------
+   HORIZONTAL RED LINE
+--------------------------------------------------------- */
 
 .snake-row::before {
     content: "";
@@ -412,6 +457,7 @@ section {
     position: absolute;
 
     left: 0;
+
     right: 0;
 
     top: 50%;
@@ -420,13 +466,15 @@ section {
 
     background: #e62429;
 
+    transform: translateY(-50%);
+
     z-index: 0;
 }
 
 
-/* =========================================================
-   ПОВОРОТ ЗМЕЙКИ
-========================================================= */
+/* ---------------------------------------------------------
+   VERTICAL TURN
+--------------------------------------------------------- */
 
 .snake-row:not(:last-child)::after {
     content: "";
@@ -435,113 +483,192 @@ section {
 
     width: 3px;
 
-    height: 110px;
+    height: 80px;
 
     background: #e62429;
 
-    right: 0;
+    bottom: -80px;
 
-    top: 50%;
+    z-index: 0;
 }
 
 
-/* Для обратной строки поворот слева */
+/* Поворот справа после нечётной строки */
 
-.snake-row.snake-reverse:not(:last-child)::after {
-    right: auto;
+.snake-row:nth-child(odd):not(:last-child)::after {
+    right: 0;
+}
 
+
+/* Поворот слева после чётной строки */
+
+.snake-row:nth-child(even):not(:last-child)::after {
     left: 0;
 }
 
 
-/* =========================================================
-   КАРТОЧКИ ХРОНОЛОГИИ
-========================================================= */
+/* ---------------------------------------------------------
+   TIMELINE ITEM
+--------------------------------------------------------- */
 
 .snake-row .timeline-item {
     position: relative;
 
-    z-index: 2;
-
     width: 100%;
+
+    height: 430px;
+
+    min-width: 0;
+
+    padding: 0;
+
+    z-index: 2;
 }
+
+
+/* ---------------------------------------------------------
+   TIMELINE CARD
+--------------------------------------------------------- */
 
 .snake-row .timeline-content {
     width: 100%;
 
-    background: #151515;
+    height: 100%;
+
+    padding: 14px;
+
+    background: #161616;
+
+    border-radius: 15px;
 
     border: 1px solid #292929;
 
-    border-radius: 14px;
-
-    padding: 15px;
+    text-align: left;
 
     position: relative;
 
     z-index: 2;
 
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
     transition:
-        transform 0.25s ease,
-        border-color 0.25s ease;
+        transform 0.3s ease,
+        border-color 0.3s ease;
 }
 
 .snake-row .timeline-content:hover {
-    transform: translateY(-6px);
+    transform: translateY(-8px);
 
     border-color: #e62429;
 }
 
 
-/* =========================================================
-   ПОСТЕРЫ ХРОНОЛОГИИ
-========================================================= */
+/* ---------------------------------------------------------
+   TIMELINE POSTER
+--------------------------------------------------------- */
 
 .snake-row .timeline-poster {
     width: 100%;
 
-    height: 250px;
+    height: 235px;
+
+    min-height: 235px;
 
     object-fit: cover;
 
+    border-radius: 10px;
+
+    margin-bottom: 12px;
+
     display: block;
 
-    border-radius: 9px;
+    flex-shrink: 0;
 
-    margin-bottom: 13px;
+    background: #0c0c0c;
 }
 
 
-/* =========================================================
-   ТЕКСТ ХРОНОЛОГИИ
-========================================================= */
+/* ---------------------------------------------------------
+   TIMELINE TEXT
+--------------------------------------------------------- */
 
 .snake-row .timeline-content span {
-    display: block;
-
     color: #e62429;
 
     font-size: 12px;
 
     font-weight: 700;
 
-    margin-bottom: 6px;
+    line-height: 1.2;
+
+    min-height: 15px;
+
+    margin-bottom: 5px;
+
+    flex-shrink: 0;
 }
 
 .snake-row .timeline-content h3 {
-    font-size: 17px;
+    font-size: 16px;
 
-    line-height: 1.3;
+    line-height: 1.25;
 
-    margin: 5px 0 8px;
+    height: 40px;
+
+    margin: 5px 0 7px;
+
+    overflow: hidden;
+
+    flex-shrink: 0;
 }
 
 .snake-row .timeline-content p {
     color: #999;
 
-    font-size: 12px;
+    font-size: 11px;
 
-    line-height: 1.5;
+    line-height: 1.45;
+
+    margin: 0;
+
+    max-height: 48px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   FEATURE LINKS
+========================================================= */
+
+.feature-link {
+    display: block;
+
+    color: inherit;
+
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+.feature-link .feature-action {
+    display: inline-block;
+
+    margin-top: 14px;
+
+    color: #e62429;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.feature-link:hover .feature-action {
+    color: #ff4b50;
 }
 
 
@@ -640,29 +767,6 @@ section {
 }
 
 
-/* Карточка-ссылка */
-
-.feature-link {
-    display: block;
-
-    color: white;
-
-    text-decoration: none;
-}
-
-.feature-action {
-    display: inline-block;
-
-    margin-top: 18px;
-
-    color: #e62429;
-
-    font-size: 14px;
-
-    font-weight: bold;
-}
-
-
 /* =========================================================
    QUIZ
 ========================================================= */
@@ -715,13 +819,13 @@ section {
 
 
 /* =========================================================
-   MOVIES & SERIES
+   MOVIES PAGE
 ========================================================= */
 
 .movies-page {
-    min-height: 100vh;
-
     padding-top: 90px;
+
+    min-height: 100vh;
 }
 
 .movies-hero {
@@ -736,34 +840,110 @@ section {
     margin-bottom: 15px;
 }
 
-.movies-hero p {
+.movies-hero > p {
     color: #999;
 
-    max-width: 650px;
-
-    margin: auto;
-
-    line-height: 1.6;
+    margin-bottom: 35px;
 }
 
+
+/* =========================================================
+   MOVIE SEARCH
+========================================================= */
+
+.catalog-controls {
+    max-width: 850px;
+
+    margin: 0 auto;
+}
+
+#movieSearch {
+    width: 100%;
+
+    padding: 15px 18px;
+
+    border-radius: 12px;
+
+    border: 1px solid #333;
+
+    background: #141414;
+
+    color: white;
+
+    outline: none;
+
+    font-size: 15px;
+}
+
+#movieSearch:focus {
+    border-color: #e62429;
+}
+
+
+/* =========================================================
+   MOVIE FILTERS
+========================================================= */
+
+.catalog-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 18px;
+
+    flex-wrap: wrap;
+}
+
+.catalog-filter {
+    border: 1px solid #333;
+
+    background: #141414;
+
+    color: #ddd;
+
+    padding: 10px 20px;
+
+    border-radius: 999px;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.catalog-filter:hover,
+.catalog-filter.active {
+    background: #e62429;
+
+    border-color: #e62429;
+
+    color: white;
+}
+
+
+/* =========================================================
+   CATALOG
+========================================================= */
+
 .catalog-section {
-    padding-top: 25px;
+    padding: 25px 7% 90px;
 }
 
 .catalog-grid {
     max-width: 1200px;
 
-    margin: auto;
+    margin: 0 auto;
 
     display: grid;
 
     grid-template-columns:
         repeat(
             auto-fit,
-            minmax(220px, 1fr)
+            minmax(190px, 1fr)
         );
 
-    gap: 20px;
+    gap: 22px;
 }
 
 .catalog-card {
@@ -775,15 +955,11 @@ section {
 
     overflow: hidden;
 
-    text-decoration: none;
-
-    color: white;
-
-    transition: 0.3s;
+    transition: 0.25s;
 }
 
 .catalog-card:hover {
-    transform: translateY(-7px);
+    transform: translateY(-6px);
 
     border-color: #e62429;
 }
@@ -868,7 +1044,7 @@ section {
 
 
 /* =========================================================
-   VIDEO PLAYER
+   WATCH PAGE
 ========================================================= */
 
 .watch-page {
@@ -881,6 +1057,22 @@ section {
     max-width: 1100px;
 
     margin: auto;
+}
+
+.back-button {
+    display: inline-block;
+
+    margin-bottom: 25px;
+
+    color: #aaa;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.back-button:hover {
+    color: #e62429;
 }
 
 .video-player {
@@ -937,298 +1129,6 @@ section {
 
 
 /* =========================================================
-   CHARACTERS PAGE
-========================================================= */
-
-.characters-page {
-    padding-top: 90px;
-
-    min-height: 100vh;
-}
-
-.characters-hero {
-    text-align: center;
-
-    padding: 80px 7% 35px;
-}
-
-.characters-hero h1 {
-    font-size: 42px;
-
-    margin-bottom: 15px;
-}
-
-.characters-hero p {
-    color: #999;
-
-    max-width: 650px;
-
-    margin: auto;
-
-    line-height: 1.6;
-}
-
-.characters-section {
-    padding: 25px 7% 90px;
-}
-
-.characters-grid {
-    max-width: 1200px;
-
-    margin: 0 auto;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(220px, 1fr)
-        );
-
-    gap: 22px;
-}
-
-
-/* =========================================================
-   CHARACTER CARD
-========================================================= */
-
-.character-card {
-    background: #141414;
-
-    border: 1px solid #292929;
-
-    border-radius: 15px;
-
-    overflow: hidden;
-
-    color: white;
-
-    text-decoration: none;
-
-    transition: 0.25s;
-}
-
-.character-card:hover {
-    transform: translateY(-7px);
-
-    border-color: #e62429;
-}
-
-
-/* Постер персонажа */
-
-.character-card img {
-    width: 100%;
-
-    height: 300px;
-
-    object-fit: cover;
-
-    display: block;
-
-    background: #0c0c0c;
-}
-
-
-/* Информация */
-
-.character-info {
-    padding: 17px;
-}
-
-.character-info span {
-    color: #e62429;
-
-    font-size: 12px;
-
-    font-weight: 700;
-}
-
-.character-info h2 {
-    margin: 7px 0;
-
-    font-size: 20px;
-}
-
-.character-info p {
-    color: #999;
-
-    font-size: 13px;
-
-    line-height: 1.5;
-}
-
-
-/* =========================================================
-   CHARACTER DETAIL PAGE
-========================================================= */
-
-.character-detail-page {
-    min-height: 100vh;
-
-    padding: 130px 7% 80px;
-}
-
-.character-detail-container {
-    max-width: 1050px;
-
-    margin: auto;
-}
-
-
-/* Назад */
-
-.back-button {
-    display: inline-block;
-
-    margin-bottom: 25px;
-
-    color: #aaa;
-
-    text-decoration: none;
-
-    font-size: 15px;
-
-    transition: 0.3s;
-}
-
-.back-button:hover {
-    color: #e62429;
-}
-
-
-/* Основная карточка */
-
-.character-detail-card {
-    display: grid;
-
-    grid-template-columns:
-        360px 1fr;
-
-    gap: 40px;
-
-    padding: 28px;
-
-    background: #141414;
-
-    border: 1px solid #292929;
-
-    border-radius: 18px;
-
-    box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.35);
-}
-
-
-/* Большой постер */
-
-.character-detail-card > img {
-    width: 100%;
-
-    height: 500px;
-
-    object-fit: cover;
-
-    display: block;
-
-    border-radius: 12px;
-
-    background: #0c0c0c;
-}
-
-
-/* Информация */
-
-.character-detail-info {
-    padding: 15px 5px;
-}
-
-.character-detail-type {
-    display: inline-block;
-
-    color: #e62429;
-
-    font-size: 12px;
-
-    font-weight: 800;
-
-    letter-spacing: 1px;
-}
-
-.character-detail-info h1 {
-    font-size: 48px;
-
-    line-height: 1.1;
-
-    margin: 12px 0 20px;
-}
-
-.character-detail-info > p {
-    color: #aaa;
-
-    font-size: 16px;
-
-    line-height: 1.7;
-
-    max-width: 600px;
-
-    margin-bottom: 30px;
-}
-
-
-/* =========================================================
-   CHARACTER FACTS
-========================================================= */
-
-.character-facts {
-    display: grid;
-
-    gap: 14px;
-
-    margin-top: 28px;
-}
-
-.character-facts div {
-    padding: 16px 18px;
-
-    background: #0e0e0e;
-
-    border: 1px solid #292929;
-
-    border-radius: 10px;
-
-    transition: 0.25s;
-}
-
-.character-facts div:hover {
-    border-color: #e62429;
-
-    transform: translateX(4px);
-}
-
-.character-facts strong {
-    display: block;
-
-    margin-bottom: 7px;
-
-    color: white;
-
-    font-size: 14px;
-}
-
-.character-facts span {
-    display: block;
-
-    color: #999;
-
-    font-size: 14px;
-
-    line-height: 1.5;
-}
-
-
-/* =========================================================
    FOOTER
 ========================================================= */
 
@@ -1248,22 +1148,15 @@ footer strong {
 
 
 /* =========================================================
-   TABLET / MOBILE
+   MOBILE
 ========================================================= */
 
-@media (max-width: 800px) {
+@media (max-width: 700px) {
 
     /* HEADER */
 
     nav {
         display: none;
-    }
-
-
-    /* SECTIONS */
-
-    section {
-        padding: 70px 5%;
     }
 
 
@@ -1274,7 +1167,69 @@ footer strong {
     }
 
 
-    /* MOVIES */
+    /* SECTIONS */
+
+    section {
+        padding: 70px 5%;
+    }
+
+
+    /* =====================================================
+       CHRONOLOGY
+    ===================================================== */
+
+    .timeline {
+        margin: 30px auto;
+    }
+
+    .snake-timeline {
+        gap: 25px;
+
+        padding: 0;
+    }
+
+    .snake-row,
+    .snake-row:nth-child(even) {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 20px;
+
+        min-height: 0;
+
+        direction: ltr;
+    }
+
+    .snake-row::before,
+    .snake-row:not(:last-child)::after {
+        display: none;
+    }
+
+    .snake-row .timeline-item {
+        width: 100%;
+
+        height: auto;
+
+        min-height: 390px;
+    }
+
+    .snake-row .timeline-content {
+        height: 390px;
+    }
+
+    .snake-row .timeline-poster {
+        height: 235px;
+
+        min-height: 235px;
+    }
+
+
+    /* =====================================================
+       MOVIES
+    ===================================================== */
 
     .movies {
         grid-template-columns:
@@ -1286,12 +1241,12 @@ footer strong {
         gap: 12px;
     }
 
-    .movie-poster {
-        height: 220px;
-    }
-
     .movie-card {
         padding: 12px;
+    }
+
+    .movie-poster {
+        height: 220px;
     }
 
     .movie-card h3 {
@@ -1300,73 +1255,33 @@ footer strong {
 
 
     /* =====================================================
-       ХРОНОЛОГИЯ НА ТЕЛЕФОНЕ
+       PATH
     ===================================================== */
 
-    .snake-row,
-    .snake-row.snake-reverse {
-
-        display: flex;
-
-        flex-direction: column;
-
-        gap: 20px;
-
-        margin-bottom: 30px;
-
-        direction: ltr;
-    }
-
-
-    .snake-row::before,
-    .snake-row::after,
-    .snake-row.snake-reverse::after {
-
-        display: none;
-    }
-
-
-    .snake-row .timeline-item {
-
-        width: 100%;
-    }
-
-
-    .snake-row .timeline-poster {
-
-        height: 320px;
-    }
-
-
-    /* PATH */
-
     .path-box {
-
         padding: 25px;
     }
 
 
-    /* CATALOG */
+    /* =====================================================
+       MOVIES PAGE
+    ===================================================== */
 
     .movies-hero {
-
         padding: 55px 5% 25px;
     }
 
     .movies-hero h1 {
-
         font-size: 30px;
     }
 
     .catalog-section {
-
         padding-left: 5%;
 
         padding-right: 5%;
     }
 
     .catalog-grid {
-
         grid-template-columns:
             repeat(
                 2,
@@ -1378,150 +1293,45 @@ footer strong {
 
     .catalog-poster,
     .catalog-placeholder {
-
         height: 220px;
     }
 
     .catalog-info {
-
         padding: 12px;
     }
 
 
-    /* WATCH */
+    /* =====================================================
+       WATCH
+    ===================================================== */
 
     .watch-page {
-
         padding: 110px 5% 60px;
     }
 
     .movie-details h1 {
-
         font-size: 30px;
     }
 
 
-    /* CHARACTERS */
-
-    .characters-hero {
-
-        padding: 55px 5% 25px;
-    }
-
-    .characters-hero h1 {
-
-        font-size: 30px;
-    }
-
-    .characters-section {
-
-        padding-left: 5%;
-
-        padding-right: 5%;
-    }
-
-    .characters-grid {
-
-        grid-template-columns:
-            repeat(
-                2,
-                minmax(0, 1fr)
-            );
-
-        gap: 12px;
-    }
-
-    .character-card img {
-
-        height: 220px;
-    }
-
-    .character-info {
-
-        padding: 12px;
-    }
-
-
-    /* CHARACTER DETAIL */
-
-    .character-detail-page {
-
-        padding: 110px 5% 60px;
-    }
-
-    .character-detail-card {
-
-        grid-template-columns: 1fr;
-
-        padding: 18px;
-    }
-
-    .character-detail-card > img {
-
-        height: 420px;
-    }
-
-    .character-detail-info {
-
-        padding: 5px;
-    }
-
-    .character-detail-info h1 {
-
-        font-size: 36px;
-    }
-
-
-    /* FACT */
+    /* =====================================================
+       FACT
+    ===================================================== */
 
     .fact-box {
-
         padding: 30px 20px;
     }
 
 
-    /* QUIZ */
+    /* =====================================================
+       QUIZ
+    ===================================================== */
 
     .quiz {
-
         padding: 25px;
     }
 
     .quiz-question {
-
         font-size: 20px;
     }
-
-}
-
-
-/* =========================================================
-   SMALL PHONES
-========================================================= */
-
-@media (max-width: 500px) {
-
-    .character-detail-card > img {
-
-        height: 350px;
-    }
-
-
-    .character-detail-info h1 {
-
-        font-size: 30px;
-    }
-
-
-    .character-detail-info > p {
-
-        font-size: 14px;
-    }
-
-
-    .character-facts div {
-
-        padding: 14px;
-    }
-
 }
