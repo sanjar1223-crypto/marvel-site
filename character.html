@@ -2,81 +2,51 @@
 <html lang="ru">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <title>Marvel Timeline — Персонаж</title>
 
-    <title>
-        Marvel Timeline — Персонаж
-    </title>
-
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
-
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
-
 <header>
 
-    <a
-        href="index.html"
-        class="logo logo-link"
-    >
+    <a href="index.html" class="logo logo-link">
         MARVEL<span>TIMELINE</span>
     </a>
 
-
     <nav>
-
-        <a href="index.html">
-            Главная
-        </a>
-
-        <a href="movies.html">
-            Фильмы и сериалы
-        </a>
-
-        <a href="characters.html">
-            Персонажи
-        </a>
-
+        <a href="index.html">Главная</a>
+        <a href="movies.html">Фильмы и сериалы</a>
+        <a href="characters.html">Персонажи</a>
     </nav>
 
 </header>
-
 
 
 <main class="character-detail-page">
 
     <section class="character-detail-container">
 
-
-        <a
-            href="characters.html"
-            class="back-button"
-        >
+        <a href="characters.html" class="character-back">
             ← Назад к персонажам
         </a>
 
 
-
         <div class="character-detail-card">
 
+            <div class="character-image-box">
 
-            <img
-                id="characterImage"
-                src=""
-                alt=""
-            >
+                <img
+                    id="characterImage"
+                    src=""
+                    alt=""
+                >
+
+            </div>
 
 
             <div class="character-detail-info">
@@ -86,68 +56,59 @@
                 </span>
 
 
-                <h1 id="characterName">
-                </h1>
+                <h1 id="characterName"></h1>
 
 
-                <p id="characterDescription">
-                </p>
-
+                <p
+                    id="characterDescription"
+                    class="character-description"
+                ></p>
 
 
                 <div class="character-facts">
 
+                    <div class="character-fact">
 
-                    <div>
-
-                        <strong>
+                        <span class="fact-title">
                             Настоящее имя
-                        </strong>
-
-                        <span id="realName">
                         </span>
+
+                        <strong id="realName"></strong>
 
                     </div>
 
 
+                    <div class="character-fact">
 
-                    <div>
-
-                        <strong>
+                        <span class="fact-title">
                             Способности
-                        </strong>
-
-                        <span id="powers">
                         </span>
+
+                        <strong id="powers"></strong>
 
                     </div>
 
 
+                    <div class="character-fact">
 
-                    <div>
-
-                        <strong>
+                        <span class="fact-title">
                             Команда
-                        </strong>
-
-                        <span id="team">
                         </span>
+
+                        <strong id="team"></strong>
 
                     </div>
 
 
+                    <div class="character-fact">
 
-                    <div>
-
-                        <strong>
+                        <span class="fact-title">
                             Первое появление
-                        </strong>
-
-                        <span id="firstAppearance">
                         </span>
 
-                    </div>
+                        <strong id="firstAppearance"></strong>
 
+                    </div>
 
                 </div>
 
@@ -160,13 +121,10 @@
 </main>
 
 
-
 <footer>
 
     <p>
-        <strong>
-            MARVEL TIMELINE
-        </strong>
+        <strong>MARVEL TIMELINE</strong>
     </p>
 
     <p style="margin-top:20px;">
@@ -176,216 +134,128 @@
 </footer>
 
 
-
 <script>
-
 
 const data = {
 
-
     "iron-man": [
-
         "Iron Man",
-
         "images/iron-man-character.jpg",
-
         "Гениальный изобретатель и герой, создавший высокотехнологичный костюм.",
-
         "Tony Stark",
-
         "Высокий интеллект, инженерные навыки, бронекостюм",
-
         "Avengers",
-
         "Iron Man (2008)"
-
     ],
-
 
 
     "captain-america": [
-
         "Captain America",
-
         "images/captain-america-character.jpg",
-
         "Суперсолдат и один из главных лидеров Avengers.",
-
         "Steve Rogers",
-
         "Физическая сила, выносливость, боевые навыки, щит",
-
         "Avengers",
-
         "Captain America: The First Avenger (2011)"
-
     ],
-
 
 
     "thor": [
-
         "Thor",
-
         "images/thor-character.jpg",
-
         "Асгардский герой и сын Одина.",
-
         "Thor Odinson",
-
         "Сила, молнии, владение Мьёльниром",
-
         "Avengers",
-
         "Thor (2011)"
-
     ],
-
 
 
     "hulk": [
-
         "Hulk",
-
         "images/hulk-character.jpg",
-
         "Мощная форма Брюса Бэннера с огромной физической силой.",
-
         "Bruce Banner",
-
         "Огромная сила, выносливость, регенерация",
-
         "Avengers",
-
         "The Incredible Hulk (2008)"
-
     ],
-
 
 
     "spider-man": [
-
         "Spider-Man",
-
         "images/spider-man-character.jpg",
-
         "Молодой герой с паучьими способностями.",
-
         "Peter Parker",
-
         "Сила, ловкость, паучье чутьё, паутина",
-
         "Avengers / союзники",
-
         "Captain America: Civil War (2016)"
-
     ],
-
 
 
     "black-widow": [
-
         "Black Widow",
-
         "images/black-widow-character.jpg",
-
         "Опытная шпионка и мастер рукопашного боя.",
-
         "Natasha Romanoff",
-
         "Боевые навыки, шпионаж, тактика",
-
         "Avengers",
-
         "Iron Man 2 (2010)"
-
     ],
-
 
 
     "doctor-strange": [
-
         "Doctor Strange",
-
         "images/doctor-strange-character.jpg",
-
         "Мастер мистических искусств и защитник Земли.",
-
         "Stephen Strange",
-
-        "Магия, порталы, заклинания, мистические артефакты",
-
-        "Masters of the Mystic Arts / Avengers",
-
+        "Магия, заклинания, управление энергией",
+        "Avengers / Masters of the Mystic Arts",
         "Doctor Strange (2016)"
-
     ],
-
 
 
     "black-panther": [
-
         "Black Panther",
-
         "images/black-panther-character.jpg",
-
         "Король Ваканды и её защитник.",
-
         "T'Challa",
-
         "Сила, ловкость, костюм Black Panther",
-
         "Avengers / Wakanda",
-
         "Captain America: Civil War (2016)"
-
     ],
-
 
 
     "wanda": [
-
         "Wanda Maximoff",
-
         "images/wanda-character.jpg",
-
         "Могущественная героиня с необычными способностями.",
-
         "Wanda Maximoff",
-
         "Телекинез, управление энергией, магия хаоса",
-
         "Avengers",
-
         "Captain America: The Winter Soldier (2014)"
-
     ],
 
 
-
     "loki": [
-
         "Loki",
-
         "images/loki-character.jpg",
-
         "Хитрый асгардец, мастер иллюзий и важный персонаж мультивселенной.",
-
         "Loki Laufeyson",
-
         "Магия, иллюзии, изменение формы, интеллект",
-
         "Разные версии и союзники",
-
         "Thor (2011)"
-
     ]
 
 };
 
 
+/* =====================================================
+   ПОЛУЧАЕМ ИМЯ ПЕРСОНАЖА ИЗ URL
+===================================================== */
 
-const params = new URLSearchParams(window.location.search);
+const params =
+    new URLSearchParams(window.location.search);
 
 const key =
     (params.get("name") ||
@@ -395,26 +265,37 @@ const key =
     .trim();
 
 
+/* Если такого персонажа нет — показываем Iron Man */
+
 const character =
     data[key] || data["iron-man"];
 
 
+/* =====================================================
+   ЗАПОЛНЯЕМ СТРАНИЦУ
+===================================================== */
 
 document.title =
-    "Marvel Timeline — "
-    + character[0];
+    "Marvel Timeline — " + character[0];
 
 
-
-const characterImage =
+const image =
     document.getElementById("characterImage");
 
-characterImage.src = character[1];
-characterImage.alt = character[0];
+image.src = character[1];
 
-characterImage.onerror = function () {
+image.alt = character[0];
+
+
+/* Если изображение не найдено */
+
+image.onerror = function () {
+
     this.onerror = null;
-    this.src = "images/iron-man-character.jpg";
+
+    this.src =
+        "images/iron-man-character.jpg";
+
 };
 
 
@@ -423,11 +304,9 @@ document.getElementById(
 ).textContent = character[0];
 
 
-
 document.getElementById(
     "characterDescription"
 ).textContent = character[2];
-
 
 
 document.getElementById(
@@ -435,11 +314,9 @@ document.getElementById(
 ).textContent = character[3];
 
 
-
 document.getElementById(
     "powers"
 ).textContent = character[4];
-
 
 
 document.getElementById(
@@ -447,15 +324,11 @@ document.getElementById(
 ).textContent = character[5];
 
 
-
 document.getElementById(
     "firstAppearance"
 ).textContent = character[6];
 
-
 </script>
 
-
 </body>
-
 </html>
