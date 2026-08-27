@@ -385,15 +385,14 @@ const data = {
 
 
 
-const params = new URLSearchParams(
-    window.location.search
-);
+const params = new URLSearchParams(window.location.search);
 
 const key =
-    params.get("name") ||
-    params.get("hero") ||
-    "iron-man";
-
+    (params.get("name") ||
+     params.get("hero") ||
+     "iron-man")
+    .toLowerCase()
+    .trim();
 
 
 const character =
@@ -407,16 +406,16 @@ document.title =
 
 
 
-document.getElementById(
-    "characterImage"
-).src = character[1];
+const characterImage =
+    document.getElementById("characterImage");
 
+characterImage.src = character[1];
+characterImage.alt = character[0];
 
-
-document.getElementById(
-    "characterImage"
-).alt = character[0];
-
+characterImage.onerror = function () {
+    this.onerror = null;
+    this.src = "images/iron-man-character.jpg";
+};
 
 
 document.getElementById(
