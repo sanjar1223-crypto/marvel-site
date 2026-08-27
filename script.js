@@ -441,4 +441,4 @@ document.addEventListener(
         setupWatchPage();
 
     }
-);
+)
