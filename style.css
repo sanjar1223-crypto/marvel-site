@@ -1334,4 +1334,266 @@ footer strong {
     .quiz-question {
         font-size: 20px;
     }
+    /* =====================================================
+   FINAL FIX — ХРОНОЛОГИЯ
+   Вставить в САМЫЙ КОНЕЦ style.css
+===================================================== */
+
+.timeline {
+    width: 100%;
+    max-width: 1200px;
+    margin: 60px auto;
+}
+
+.snake-timeline {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+/* Одна строка = ровно 4 карточки */
+.snake-row {
+    position: relative;
+
+    width: 100%;
+
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(4, 1fr) !important;
+
+    gap: 24px !important;
+
+    align-items: stretch !important;
+
+    min-height: 430px;
+
+    margin: 0;
+}
+
+/* Чётные строки разворачиваем */
+.snake-row.snake-reverse {
+    direction: rtl;
+}
+
+/* Карточки внутри остаются нормальными */
+.snake-row.snake-reverse .timeline-item {
+    direction: ltr;
+}
+
+/* Карточка */
+.snake-row .timeline-item {
+    width: 100% !important;
+
+    height: 430px !important;
+
+    min-width: 0;
+
+    padding: 0 !important;
+
+    position: relative;
+
+    left: auto !important;
+
+    z-index: 2;
+}
+
+/* Внутренняя карточка */
+.snake-row .timeline-content {
+    width: 100% !important;
+
+    height: 430px !important;
+
+    padding: 14px !important;
+
+    background: #161616;
+
+    border-radius: 15px;
+
+    border: 1px solid #292929;
+
+    display: flex !important;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
+    position: relative;
+
+    z-index: 3;
+
+    text-align: left;
+}
+
+/* Постер */
+.snake-row .timeline-poster {
+    width: 100% !important;
+
+    height: 235px !important;
+
+    min-height: 235px !important;
+
+    max-height: 235px !important;
+
+    object-fit: cover !important;
+
+    display: block !important;
+
+    border-radius: 10px;
+
+    margin-bottom: 12px;
+
+    flex-shrink: 0;
+}
+
+/* Год */
+.snake-row .timeline-content span {
+    display: block;
+
+    height: 16px;
+
+    min-height: 16px;
+
+    color: #e62429;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    margin-bottom: 5px;
+
+    flex-shrink: 0;
+}
+
+/* Название */
+.snake-row .timeline-content h3 {
+    height: 40px;
+
+    min-height: 40px;
+
+    margin: 5px 0 7px;
+
+    font-size: 16px;
+
+    line-height: 1.25;
+
+    overflow: hidden;
+
+    flex-shrink: 0;
+}
+
+/* Описание */
+.snake-row .timeline-content p {
+    height: 48px;
+
+    max-height: 48px;
+
+    margin: 0;
+
+    color: #999;
+
+    font-size: 11px;
+
+    line-height: 1.45;
+
+    overflow: hidden;
+}
+
+/* Красная линия */
+.snake-row::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    top: 50%;
+
+    height: 3px;
+
+    background: #e62429;
+
+    transform: translateY(-50%);
+
+    z-index: 1;
+}
+
+/* Поворот линии */
+.snake-row:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+
+    width: 3px;
+
+    height: 80px;
+
+    background: #e62429;
+
+    bottom: -80px;
+
+    z-index: 1;
+}
+
+/* Нечётная строка → поворот справа */
+.snake-row:not(.snake-reverse):not(:last-child)::after {
+    right: 0;
+}
+
+/* Чётная строка → поворот слева */
+.snake-row.snake-reverse:not(:last-child)::after {
+    left: 0;
+}
+
+
+/* =====================================================
+   МОБИЛЬНАЯ ВЕРСИЯ
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .snake-timeline {
+        gap: 25px;
+    }
+
+    .snake-row,
+    .snake-row.snake-reverse {
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        gap: 20px !important;
+
+        min-height: 0;
+
+        direction: ltr;
+    }
+
+    .snake-row::before,
+    .snake-row::after {
+        display: none !important;
+    }
+
+    .snake-row .timeline-item {
+        width: 100% !important;
+
+        height: 390px !important;
+    }
+
+    .snake-row .timeline-content {
+        width: 100% !important;
+
+        height: 390px !important;
+    }
+
+    .snake-row .timeline-poster {
+        height: 235px !important;
+
+        min-height: 235px !important;
+
+        max-height: 235px !important;
+    }
+  }
 }
