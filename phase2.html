@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Marvel Timeline — Phase 2</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        .phase-page {
+            min-height: 100vh;
+            padding: 120px 7% 80px;
+        }
+
+        .phase-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #999;
+            text-decoration: none;
+            margin-bottom: 35px;
+            transition: 0.3s;
+        }
+
+        .back-link:hover {
+            color: #e62429;
+        }
+
+        .phase-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .phase-label {
+            color: #e62429;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .phase-header h1 {
+            font-size: 52px;
+            margin: 12px 0 18px;
+        }
+
+        .phase-header p {
+            max-width: 700px;
+            margin: auto;
+            color: #999;
+            line-height: 1.7;
+        }
+
+        .phase-movies {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .phase-movie {
+            background: #161616;
+            border: 1px solid #292929;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .phase-movie:hover {
+            transform: translateY(-6px);
+            border-color: #e62429;
+        }
+
+        .phase-movie img {
+            width: 100%;
+            height: 390px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .phase-movie-info {
+            padding: 20px;
+        }
+
+        .movie-year {
+            color: #e62429;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .phase-movie h2 {
+            font-size: 20px;
+            margin: 8px 0 10px;
+        }
+
+        .phase-movie p {
+            color: #999;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 850px) {
+
+            .phase-movies {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .phase-header h1 {
+                font-size: 42px;
+            }
+
+        }
+
+        @media (max-width: 550px) {
+
+            .phase-page {
+                padding: 100px 20px 60px;
+            }
+
+            .phase-movies {
+                grid-template-columns: 1fr;
+            }
+
+            .phase-header h1 {
+                font-size: 35px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <a href="index.html" class="logo logo-link">
+        MARVEL<span>TIMELINE</span>
+    </a>
+
+    <nav>
+
+        <a href="index.html">
+            Главная
+        </a>
+
+        <a href="movies.html">
+            Фильмы и сериалы
+        </a>
+
+        <a href="characters.html">
+            Персонажи
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<main class="phase-page">
+
+    <div class="phase-container">
+
+
+        <a
+            href="phases-sagas.html"
+            class="back-link"
+        >
+            ← Назад к фазам и сагам
+        </a>
+
+
+        <div class="phase-header">
+
+            <span class="phase-label">
+                MARVEL CINEMATIC UNIVERSE
+            </span>
+
+            <h1>
+                Phase 2
+            </h1>
+
+            <p>
+                Вторая фаза MCU продолжает истории знакомых
+                героев, расширяет вселенную и вводит новых
+                персонажей. Герои сталкиваются с последствиями
+                событий первой фазы.
+            </p>
+
+        </div>
+
+
+
+        <div class="phase-movies">
+
+
+            <!-- IRON MAN 3 -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/iron-man-3.jpg"
+                    alt="Iron Man 3"
+                >
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2013
+                    </span>
+
+                    <h2>
+                        Iron Man 3
+                    </h2>
+
+                    <p>
+                        Тони Старк сталкивается с последствиями
+                        событий битвы за Нью-Йорк и новым врагом.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- THOR THE DARK WORLD -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/thor-the-dark-world.jpg"
+                    alt="Thor: The Dark World"
+                >
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2013
+                    </span>
+
+                    <h2>
+                        Thor: The Dark World
+                    </h2>
+
+                    <p>
+                        Тор защищает Девять миров от новой
+                        опасности и сталкивается с Тёмными эльфами.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- WINTER SOLDIER -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/captain-america-the-winter-soldier.jpg"
+                    alt="Captain America: The Winter Soldier"
+                >
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2014
+                    </span>
+
+                    <h2>
+                        Captain America: The Winter Soldier
+                    </h2>
+
+                    <p>
+                        Стив Роджерс узнаёт шокирующую правду
+                        и сталкивается с таинственным Зимним солдатом.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- GUARDIANS -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/guardians-of-the-galaxy.jpg"
+                    alt="Guardians of the Galaxy"
+                >
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2014
+                    </span>
+
+                    <h2>
+                        Guardians of the Galaxy
+                    </h2>
+
+                    <p>
+                        Питер Квилл и необычная команда героев
+                        объединяются, чтобы защитить галактику.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- AGE OF ULTRON -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/avengers-age-of-ultron.jpg"
+                    alt="Avengers: Age of Ultron"
+                >
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2015
+                    </span>
+
+                    <h2>
+                        Avengers: Age of Ultron
+                    </h2>
+
+                    <p>
+                        Мстители создают искусственный интеллект,
+                        который становится опасной угрозой для человечества.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ANT-MAN -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/ant-man.jpg"
+                    alt="Ant-Man"
+                >
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2015
+                    </span>
+
+                    <h2>
+                        Ant-Man
+                    </h2>
+
+                    <p>
+                        Скотт Лэнг получает уникальный костюм
+                        и становится новым Человеком-муравьём.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</main>
+
+
+
+<footer>
+
+    <p>
+        <strong>MARVEL TIMELINE</strong>
+    </p>
+
+    <p style="margin-top:20px;">
+        Твой путь по вселенной MCU.
+    </p>
+
+    <p style="margin-top:20px;">
+        Fan project • Not affiliated with Marvel Studios
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

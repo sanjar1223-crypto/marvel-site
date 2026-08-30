@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Marvel Timeline — Phase 1</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        .phase-page {
+            min-height: 100vh;
+            padding: 120px 7% 80px;
+        }
+
+        .phase-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #999;
+            text-decoration: none;
+            margin-bottom: 35px;
+            transition: 0.3s;
+        }
+
+        .back-link:hover {
+            color: #e62429;
+        }
+
+        .phase-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .phase-label {
+            color: #e62429;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .phase-header h1 {
+            font-size: 52px;
+            margin: 12px 0 18px;
+        }
+
+        .phase-header p {
+            max-width: 700px;
+            margin: auto;
+            color: #999;
+            line-height: 1.7;
+        }
+
+
+        /* FILMS */
+
+        .phase-movies {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .phase-movie {
+            background: #161616;
+            border: 1px solid #292929;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .phase-movie:hover {
+            transform: translateY(-6px);
+            border-color: #e62429;
+        }
+
+        .phase-movie img {
+            width: 100%;
+            height: 390px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .phase-movie-info {
+            padding: 20px;
+        }
+
+        .movie-year {
+            color: #e62429;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .phase-movie h2 {
+            font-size: 20px;
+            margin: 8px 0 10px;
+        }
+
+        .phase-movie p {
+            color: #999;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 850px) {
+
+            .phase-movies {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .phase-header h1 {
+                font-size: 42px;
+            }
+
+        }
+
+        @media (max-width: 550px) {
+
+            .phase-page {
+                padding: 100px 20px 60px;
+            }
+
+            .phase-movies {
+                grid-template-columns: 1fr;
+            }
+
+            .phase-header h1 {
+                font-size: 35px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <a href="index.html" class="logo logo-link">
+        MARVEL<span>TIMELINE</span>
+    </a>
+
+    <nav>
+
+        <a href="index.html">
+            Главная
+        </a>
+
+        <a href="movies.html">
+            Фильмы и сериалы
+        </a>
+
+        <a href="characters.html">
+            Персонажи
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- PAGE -->
+
+<main class="phase-page">
+
+    <div class="phase-container">
+
+
+        <a
+            href="phases-sagas.html"
+            class="back-link"
+        >
+            ← Назад к фазам и сагам
+        </a>
+
+
+        <!-- HEADER -->
+
+        <div class="phase-header">
+
+            <span class="phase-label">
+                MARVEL CINEMATIC UNIVERSE
+            </span>
+
+            <h1>
+                Phase 1
+            </h1>
+
+            <p>
+                Первая фаза MCU знакомит зрителей с главными
+                героями и постепенно объединяет их в команду Avengers.
+                Именно здесь начинается большая история
+                кинематографической вселенной Marvel.
+            </p>
+
+        </div>
+
+
+
+        <!-- MOVIES -->
+
+        <div class="phase-movies">
+
+
+            <!-- IRON MAN -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/iron-man.jpg"
+                    alt="Iron Man"
+                >
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2008
+                    </span>
+
+                    <h2>
+                        Iron Man
+                    </h2>
+
+                    <p>
+                        Тони Старк создаёт высокотехнологичный
+                        костюм и становится Железным человеком.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- INCREDIBLE HULK -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/the-incredible-hulk.jpg"
+                    alt="The Incredible Hulk"
+                >
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2008
+                    </span>
+
+                    <h2>
+                        The Incredible Hulk
+                    </h2>
+
+                    <p>
+                        Брюс Бэннер пытается контролировать
+                        свою силу и превращение в Халка.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- IRON MAN 2 -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/iron-man-2.jpg"
+                    alt="Iron Man 2"
+                >
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2010
+                    </span>
+
+                    <h2>
+                        Iron Man 2
+                    </h2>
+
+                    <p>
+                        Тони Старк сталкивается с новыми
+                        противниками и последствиями своей
+                        популярности.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- THOR -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/thor.jpg"
+                    alt="Thor"
+                >
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2011
+                    </span>
+
+                    <h2>
+                        Thor
+                    </h2>
+
+                    <p>
+                        Асгардский принц Тор оказывается
+                        на Земле и учится быть настоящим героем.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CAPTAIN AMERICA -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/the-first-avenger.jpg"
+                    alt="Captain America: The First Avenger"
+                >
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2011
+                    </span>
+
+                    <h2>
+                        Captain America: The First Avenger
+                    </h2>
+
+                    <p>
+                        Стив Роджерс становится суперсолдатом
+                        и сражается во время Второй мировой войны.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- AVENGERS -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/the-avengers.jpg"
+                    alt="The Avengers"
+                >
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2012
+                    </span>
+
+                    <h2>
+                        The Avengers
+                    </h2>
+
+                    <p>
+                        Железный человек, Капитан Америка,
+                        Тор, Халк и другие герои впервые
+                        объединяются в одну команду.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</main>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        <strong>MARVEL TIMELINE</strong>
+    </p>
+
+    <p style="margin-top:20px;">
+        Твой путь по вселенной MCU.
+    </p>
+
+    <p style="margin-top:20px;">
+        Fan project • Not affiliated with Marvel Studios
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
