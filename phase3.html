@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Marvel Timeline — Phase 3</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        .phase-page {
+            min-height: 100vh;
+            padding: 120px 7% 80px;
+        }
+
+        .phase-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #999;
+            text-decoration: none;
+            margin-bottom: 35px;
+            transition: 0.3s;
+        }
+
+        .back-link:hover {
+            color: #e62429;
+        }
+
+        .phase-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .phase-label {
+            color: #e62429;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .phase-header h1 {
+            font-size: 52px;
+            margin: 12px 0 18px;
+        }
+
+        .phase-header p {
+            max-width: 750px;
+            margin: auto;
+            color: #999;
+            line-height: 1.7;
+        }
+
+
+        /* MOVIES */
+
+        .phase-movies {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .phase-movie {
+            background: #161616;
+            border: 1px solid #292929;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .phase-movie:hover {
+            transform: translateY(-6px);
+            border-color: #e62429;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+        }
+
+        .phase-movie img {
+            width: 100%;
+            height: 390px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .phase-movie-info {
+            padding: 20px;
+        }
+
+        .movie-year {
+            color: #e62429;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .phase-movie h2 {
+            font-size: 20px;
+            margin: 8px 0 10px;
+        }
+
+        .phase-movie p {
+            color: #999;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 850px) {
+
+            .phase-movies {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .phase-header h1 {
+                font-size: 42px;
+            }
+
+        }
+
+
+        @media (max-width: 550px) {
+
+            .phase-page {
+                padding: 100px 20px 60px;
+            }
+
+            .phase-movies {
+                grid-template-columns: 1fr;
+            }
+
+            .phase-header h1 {
+                font-size: 35px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <a href="index.html" class="logo logo-link">
+        MARVEL<span>TIMELINE</span>
+    </a>
+
+
+    <nav>
+
+        <a href="index.html">
+            Главная
+        </a>
+
+        <a href="movies.html">
+            Фильмы и сериалы
+        </a>
+
+        <a href="characters.html">
+            Персонажи
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ================= PHASE 3 ================= -->
+
+<main class="phase-page">
+
+    <div class="phase-container">
+
+
+        <a
+            href="phases-sagas.html"
+            class="back-link"
+        >
+            ← Назад к фазам и сагам
+        </a>
+
+
+
+        <!-- HEADER -->
+
+        <div class="phase-header">
+
+            <span class="phase-label">
+                MARVEL CINEMATIC UNIVERSE
+            </span>
+
+
+            <h1>
+                Phase 3
+            </h1>
+
+
+            <p>
+                Третья фаза является кульминацией Infinity Saga.
+                Герои сталкиваются с последствиями своих решений,
+                появляются новые персонажи, а история постепенно
+                приводит к противостоянию с Таносом.
+            </p>
+
+        </div>
+
+
+
+        <!-- ================= MOVIES ================= -->
+
+        <div class="phase-movies">
+
+
+            <!-- CIVIL WAR -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/civil-war.jpg"
+                    alt="Captain America Civil War"
+                >
+
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2016
+                    </span>
+
+
+                    <h2>
+                        Captain America: Civil War
+                    </h2>
+
+
+                    <p>
+                        Разногласия между героями приводят
+                        к конфликту внутри команды Avengers.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DOCTOR STRANGE -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/doctor-strange.jpg"
+                    alt="Doctor Strange"
+                >
+
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2016
+                    </span>
+
+
+                    <h2>
+                        Doctor Strange
+                    </h2>
+
+
+                    <p>
+                        Стивен Стрэндж открывает мир магии
+                        и становится защитником Земли.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- GUARDIANS 2 -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/guardians-of-the-galaxy-2.jpg"
+                    alt="Guardians of the Galaxy Vol. 2"
+                >
+
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2017
+                    </span>
+
+
+                    <h2>
+                        Guardians of the Galaxy Vol. 2
+                    </h2>
+
+
+                    <p>
+                        Стражи Галактики отправляются
+                        в новое космическое приключение.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SPIDER-MAN -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/spider-man-homecoming.jpg"
+                    alt="Spider-Man Homecoming"
+                >
+
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2017
+                    </span>
+
+
+                    <h2>
+                        Spider-Man: Homecoming
+                    </h2>
+
+
+                    <p>
+                        Питер Паркер пытается совмещать
+                        школьную жизнь и жизнь супергероя.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- THOR RAGNAROK -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/thor-ragnarok.jpg"
+                    alt="Thor Ragnarok"
+                >
+
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2017
+                    </span>
+
+
+                    <h2>
+                        Thor: Ragnarok
+                    </h2>
+
+
+                    <p>
+                        Тор сталкивается с угрозой Рагнарёка
+                        и пытается спасти Асгард.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- BLACK PANTHER -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/black-panther.jpg"
+                    alt="Black Panther"
+                >
+
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2018
+                    </span>
+
+
+                    <h2>
+                        Black Panther
+                    </h2>
+
+
+                    <p>
+                        Т’Чалла возвращается в Ваканду
+                        и становится её королём.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- INFINITY WAR -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/infinity-war.jpg"
+                    alt="Avengers Infinity War"
+                >
+
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2018
+                    </span>
+
+
+                    <h2>
+                        Avengers: Infinity War
+                    </h2>
+
+
+                    <p>
+                        Мстители и их союзники сталкиваются
+                        с Таносом и его планом собрать
+                        Камни Бесконечности.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ANT-MAN AND THE WASP -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/ant-man-and-the-wasp.jpg"
+                    alt="Ant-Man and the Wasp"
+                >
+
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2018
+                    </span>
+
+
+                    <h2>
+                        Ant-Man and the Wasp
+                    </h2>
+
+
+                    <p>
+                        Скотт Лэнг и Хоуп ван Дайн
+                        отправляются в квантовый мир.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ENDGAME -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/endgame.jpg"
+                    alt="Avengers Endgame"
+                >
+
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2019
+                    </span>
+
+
+                    <h2>
+                        Avengers: Endgame
+                    </h2>
+
+
+                    <p>
+                        Герои пытаются изменить последствия
+                        событий Infinity War и завершить
+                        историю Infinity Saga.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CAPTAIN MARVEL -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/captain-marvel.jpg"
+                    alt="Captain Marvel"
+                >
+
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2019
+                    </span>
+
+
+                    <h2>
+                        Captain Marvel
+                    </h2>
+
+
+                    <p>
+                        История Кэрол Дэнверс и её превращения
+                        в одного из самых могущественных героев MCU.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FAR FROM HOME -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/spider-man-far-from-home.jpg"
+                    alt="Spider-Man Far From Home"
+                >
+
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2019
+                    </span>
+
+
+                    <h2>
+                        Spider-Man: Far From Home
+                    </h2>
+
+
+                    <p>
+                        Питер Паркер пытается справиться
+                        с последствиями событий Endgame.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</main>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        <strong>MARVEL TIMELINE</strong>
+    </p>
+
+
+    <p style="margin-top:20px;">
+        Твой путь по вселенной MCU.
+    </p>
+
+
+    <p style="margin-top:20px;">
+        Fan project • Not affiliated with Marvel Studios
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

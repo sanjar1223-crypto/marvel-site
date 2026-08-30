@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Marvel Timeline — Phase 4</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        .phase-page {
+            min-height: 100vh;
+            padding: 120px 7% 80px;
+        }
+
+        .phase-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #999;
+            text-decoration: none;
+            margin-bottom: 35px;
+            transition: 0.3s;
+        }
+
+        .back-link:hover {
+            color: #e62429;
+        }
+
+        .phase-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .phase-label {
+            color: #e62429;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .phase-header h1 {
+            font-size: 52px;
+            margin: 12px 0 18px;
+        }
+
+        .phase-header p {
+            max-width: 750px;
+            margin: auto;
+            color: #999;
+            line-height: 1.7;
+        }
+
+        .phase-movies {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .phase-movie {
+            background: #161616;
+            border: 1px solid #292929;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .phase-movie:hover {
+            transform: translateY(-6px);
+            border-color: #e62429;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+        }
+
+        .phase-movie img {
+            width: 100%;
+            height: 390px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .phase-movie-info {
+            padding: 20px;
+        }
+
+        .movie-year {
+            color: #e62429;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .phase-movie h2 {
+            font-size: 20px;
+            margin: 8px 0 10px;
+        }
+
+        .phase-movie p {
+            color: #999;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 850px) {
+
+            .phase-movies {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .phase-header h1 {
+                font-size: 42px;
+            }
+
+        }
+
+        @media (max-width: 550px) {
+
+            .phase-page {
+                padding: 100px 20px 60px;
+            }
+
+            .phase-movies {
+                grid-template-columns: 1fr;
+            }
+
+            .phase-header h1 {
+                font-size: 35px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <a href="index.html" class="logo logo-link">
+        MARVEL<span>TIMELINE</span>
+    </a>
+
+    <nav>
+
+        <a href="index.html">
+            Главная
+        </a>
+
+        <a href="movies.html">
+            Фильмы и сериалы
+        </a>
+
+        <a href="characters.html">
+            Персонажи
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<main class="phase-page">
+
+    <div class="phase-container">
+
+
+        <a
+            href="phases-sagas.html"
+            class="back-link"
+        >
+            ← Назад к фазам и сагам
+        </a>
+
+
+
+        <div class="phase-header">
+
+            <span class="phase-label">
+                MARVEL CINEMATIC UNIVERSE
+            </span>
+
+            <h1>
+                Phase 4
+            </h1>
+
+            <p>
+                Четвёртая фаза открывает новую эпоху MCU после
+                событий Infinity Saga. Вселенная расширяется,
+                появляются новые герои, новые команды и
+                первые серьёзные истории, связанные с мультивселенной.
+            </p>
+
+        </div>
+
+
+
+        <div class="phase-movies">
+
+
+            <!-- WANDAVISION -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/wandavision.jpg"
+                    alt="WandaVision"
+                >
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2021
+                    </span>
+
+                    <h2>
+                        WandaVision
+                    </h2>
+
+                    <p>
+                        Ванда Максимофф и Вижн оказываются
+                        в необычной реальности, которая скрывает
+                        множество тайн.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FALCON AND WINTER SOLDIER -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/falcon-and-winter-soldier.jpg"
+                    alt="The Falcon and the Winter Soldier"
+                >
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2021
+                    </span>
+
+                    <h2>
+                        The Falcon and the Winter Soldier
+                    </h2>
+
+                    <p>
+                        Сэм Уилсон и Баки Барнс объединяются,
+                        чтобы справиться с новой угрозой.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- LOKI -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/loki.jpg"
+                    alt="Loki"
+                >
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2021
+                    </span>
+
+                    <h2>
+                        Loki
+                    </h2>
+
+                    <p>
+                        Локи оказывается связан с организацией,
+                        которая следит за событиями во времени.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- BLACK WIDOW -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/black-widow.jpg"
+                    alt="Black Widow"
+                >
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2021
+                    </span>
+
+                    <h2>
+                        Black Widow
+                    </h2>
+
+                    <p>
+                        Наташа Романофф возвращается к событиям
+                        своего прошлого и встречается со своей семьёй.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- WHAT IF -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/what-if.jpg"
+                    alt="What If"
+                >
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2021
+                    </span>
+
+                    <h2>
+                        What If...?
+                    </h2>
+
+                    <p>
+                        Анимационный сериал исследует альтернативные
+                        варианты событий MCU.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SHANG CHI -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/shang-chi.jpg"
+                    alt="Shang-Chi and the Legend of the Ten Rings"
+                >
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2021
+                    </span>
+
+                    <h2>
+                        Shang-Chi and the Legend of the Ten Rings
+                    </h2>
+
+                    <p>
+                        Шан-Чи сталкивается с прошлым своей семьи
+                        и организацией Десяти колец.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ETERNALS -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/eternals.jpg"
+                    alt="Eternals"
+                >
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2021
+                    </span>
+
+                    <h2>
+                        Eternals
+                    </h2>
+
+                    <p>
+                        Древние существа возвращаются после долгого
+                        отсутствия, чтобы защитить Землю.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- HAWKEYE -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/hawkeye.jpg"
+                    alt="Hawkeye"
+                >
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2021
+                    </span>
+
+                    <h2>
+                        Hawkeye
+                    </h2>
+
+                    <p>
+                        Клинт Бартон объединяется с молодой
+                        лучницей Кейт Бишоп.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SPIDER-MAN NO WAY HOME -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/spider-man-no-way-home.jpg"
+                    alt="Spider-Man No Way Home"
+                >
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2021
+                    </span>
+
+                    <h2>
+                        Spider-Man: No Way Home
+                    </h2>
+
+                    <p>
+                        Питер Паркер сталкивается с последствиями
+                        магического вмешательства Доктора Стрэнджа.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- MOON KNIGHT -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/moon-knight.jpg"
+                    alt="Moon Knight"
+                >
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2022
+                    </span>
+
+                    <h2>
+                        Moon Knight
+                    </h2>
+
+                    <p>
+                        Марк Спектор оказывается втянут
+                        в мистическую историю древних богов.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DOCTOR STRANGE MULTIVERSE -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/doctor-strange-in-the-multiverse-of-madness.jpg"
+                    alt="Doctor Strange in the Multiverse of Madness"
+                >
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2022
+                    </span>
+
+                    <h2>
+                        Doctor Strange in the Multiverse of Madness
+                    </h2>
+
+                    <p>
+                        Доктор Стрэндж сталкивается с опасностями
+                        мультивселенной и другими версиями реальности.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- MS MARVEL -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/ms-marvel.jpg"
+                    alt="Ms. Marvel"
+                >
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2022
+                    </span>
+
+                    <h2>
+                        Ms. Marvel
+                    </h2>
+
+                    <p>
+                        Камала Хан получает необычные способности
+                        и начинает свой путь супергероя.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- THOR LOVE AND THUNDER -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/thor-love-and-thunder.jpg"
+                    alt="Thor Love and Thunder"
+                >
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2022
+                    </span>
+
+                    <h2>
+                        Thor: Love and Thunder
+                    </h2>
+
+                    <p>
+                        Тор встречает старых друзей и сталкивается
+                        с новым опасным противником.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- I AM GROOT -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/i-am-groot.jpg"
+                    alt="I Am Groot"
+                >
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2022
+                    </span>
+
+                    <h2>
+                        I Am Groot
+                    </h2>
+
+                    <p>
+                        Короткие приключения маленького Грута
+                        во время его взросления.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SHE HULK -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/she-hulk.jpg"
+                    alt="She-Hulk"
+                >
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2022
+                    </span>
+
+                    <h2>
+                        She-Hulk: Attorney at Law
+                    </h2>
+
+                    <p>
+                        Дженнифер Уолтерс пытается совмещать
+                        работу адвоката и жизнь супергероя.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- WEREWOLF BY NIGHT -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/werewolf-by-night.jpg"
+                    alt="Werewolf by Night"
+                >
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2022
+                    </span>
+
+                    <h2>
+                        Werewolf by Night
+                    </h2>
+
+                    <p>
+                        Группа охотников на монстров оказывается
+                        втянута в опасную мистическую охоту.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- BLACK PANTHER WAKANDA FOREVER -->
+
+            <div class="phase-movie">
+
+                <img
+                    src="images/black-panther-wakanda-forever.jpg"
+                    alt="Black Panther Wakanda Forever"
+                >
+
+                <div class="phase-movie-info">
+
+                    <span class="movie-year">
+                        2022
+                    </span>
+
+                    <h2>
+                        Black Panther: Wakanda Forever
+                    </h2>
+
+                    <p>
+                        Ваканда пытается сохранить своё наследие
+                        после потери своего короля.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</main>
+
+
+
+<footer>
+
+    <p>
+        <strong>MARVEL TIMELINE</strong>
+    </p>
+
+    <p style="margin-top:20px;">
+        Твой путь по вселенной MCU.
+    </p>
+
+    <p style="margin-top:20px;">
+        Fan project • Not affiliated with Marvel Studios
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
