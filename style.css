@@ -2362,4 +2362,22 @@ footer strong {
     }
 
 }
+.feature-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.feature-link:hover {
+    transform: translateY(-6px);
+}
+
+.feature-action {
+    display: inline-block;
+    margin-top: 15px;
+    color: #e62429;
+    font-size: 13px;
+    font-weight: bold;
+}
 }
