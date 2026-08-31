@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Marvel Timeline — Multiverse Saga</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        .saga-page {
+            min-height: 100vh;
+            padding: 120px 7% 80px;
+        }
+
+        .saga-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #999;
+            text-decoration: none;
+            margin-bottom: 35px;
+            transition: 0.3s;
+        }
+
+        .back-link:hover {
+            color: #e62429;
+        }
+
+        .saga-header {
+            text-align: center;
+            margin-bottom: 65px;
+        }
+
+        .saga-label {
+            color: #e62429;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .saga-header h1 {
+            font-size: 52px;
+            margin: 12px 0 20px;
+        }
+
+        .saga-header p {
+            max-width: 750px;
+            margin: auto;
+            color: #999;
+            line-height: 1.7;
+        }
+
+
+        /* PHASES */
+
+        .saga-section {
+            margin-bottom: 70px;
+        }
+
+        .saga-section-title {
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+
+        .phase-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 25px 30px;
+            margin-bottom: 15px;
+
+            background: #161616;
+            border: 1px solid #292929;
+            border-radius: 14px;
+
+            color: white;
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+        .phase-box:hover {
+            border-color: #e62429;
+            transform: translateX(5px);
+        }
+
+        .phase-box-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .phase-number {
+            color: #e62429;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .phase-box h3 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .phase-arrow {
+            color: #777;
+            font-size: 20px;
+        }
+
+
+        /* MOVIES */
+
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .movie-card {
+            background: #161616;
+            border: 1px solid #292929;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-6px);
+            border-color: #e62429;
+        }
+
+        .movie-card img {
+            width: 100%;
+            height: 390px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .movie-info {
+            padding: 20px;
+        }
+
+        .movie-year {
+            color: #e62429;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .movie-info h3 {
+            font-size: 19px;
+            margin: 8px 0 10px;
+        }
+
+        .movie-info p {
+            color: #999;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 850px) {
+
+            .movie-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .saga-header h1 {
+                font-size: 42px;
+            }
+
+        }
+
+
+        @media (max-width: 550px) {
+
+            .saga-page {
+                padding: 100px 20px 60px;
+            }
+
+            .movie-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .saga-header h1 {
+                font-size: 35px;
+            }
+
+            .phase-box {
+                padding: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <a href="index.html" class="logo logo-link">
+        MARVEL<span>TIMELINE</span>
+    </a>
+
+    <nav>
+
+        <a href="index.html">
+            Главная
+        </a>
+
+        <a href="movies.html">
+            Фильмы и сериалы
+        </a>
+
+        <a href="characters.html">
+            Персонажи
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<main class="saga-page">
+
+    <div class="saga-container">
+
+
+        <a
+            href="phases-sagas.html"
+            class="back-link"
+        >
+            ← Назад к фазам и сагам
+        </a>
+
+
+
+        <!-- HEADER -->
+
+        <div class="saga-header">
+
+            <span class="saga-label">
+                MARVEL CINEMATIC UNIVERSE
+            </span>
+
+            <h1>
+                Multiverse Saga
+            </h1>
+
+            <p>
+                Multiverse Saga — новая большая история MCU,
+                которая начинается после завершения Infinity Saga.
+                Она исследует альтернативные реальности,
+                путешествия во времени и различные версии персонажей.
+            </p>
+
+        </div>
+
+
+
+        <!-- PHASES -->
+
+        <section class="saga-section">
+
+            <h2 class="saga-section-title">
+                Фазы Multiverse Saga
+            </h2>
+
+
+            <a
+                href="phase4.html"
+                class="phase-box"
+            >
+
+                <div class="phase-box-left">
+
+                    <span class="phase-number">
+                        PHASE 4
+                    </span>
+
+                    <h3>
+                        Четвёртая фаза
+                    </h3>
+
+                </div>
+
+                <span class="phase-arrow">
+                    →
+                </span>
+
+            </a>
+
+
+            <a
+                href="phase5.html"
+                class="phase-box"
+            >
+
+                <div class="phase-box-left">
+
+                    <span class="phase-number">
+                        PHASE 5
+                    </span>
+
+                    <h3>
+                        Пятая фаза
+                    </h3>
+
+                </div>
+
+                <span class="phase-arrow">
+                    →
+                </span>
+
+            </a>
+
+
+            <a
+                href="phase6.html"
+                class="phase-box"
+            >
+
+                <div class="phase-box-left">
+
+                    <span class="phase-number">
+                        PHASE 6
+                    </span>
+
+                    <h3>
+                        Шестая фаза
+                    </h3>
+
+                </div>
+
+                <span class="phase-arrow">
+                    →
+                </span>
+
+            </a>
+
+        </section>
+
+
+
+        <!-- IMPORTANT PROJECTS -->
+
+        <section class="saga-section">
+
+            <h2 class="saga-section-title">
+                Главные проекты саги
+            </h2>
+
+
+            <div class="movie-grid">
+
+
+                <!-- LOKI -->
+
+                <div class="movie-card">
+
+                    <img
+                        src="images/loki.jpg"
+                        alt="Loki"
+                    >
+
+                    <div class="movie-info">
+
+                        <span class="movie-year">
+                            2021
+                        </span>
+
+                        <h3>
+                            Loki
+                        </h3>
+
+                        <p>
+                            История Локи становится одной
+                            из важных частей развития мультивселенной.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- WHAT IF -->
+
+                <div class="movie-card">
+
+                    <img
+                        src="images/what-if.jpg"
+                        alt="What If"
+                    >
+
+                    <div class="movie-info">
+
+                        <span class="movie-year">
+                            2021
+                        </span>
+
+                        <h3>
+                            What If...?
+                        </h3>
+
+                        <p>
+                            Альтернативные варианты событий
+                            показывают множество разных реальностей.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- NO WAY HOME -->
+
+                <div class="movie-card">
+
+                    <img
+                        src="images/spider-man-no-way-home.jpg"
+                        alt="Spider-Man No Way Home"
+                    >
+
+                    <div class="movie-info">
+
+                        <span class="movie-year">
+                            2021
+                        </span>
+
+                        <h3>
+                            Spider-Man: No Way Home
+                        </h3>
+
+                        <p>
+                            Питер Паркер сталкивается
+                            с последствиями нарушения границ
+                            между реальностями.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- DOCTOR STRANGE -->
+
+                <div class="movie-card">
+
+                    <img
+                        src="images/doctor-strange-in-the-multiverse-of-madness.jpg"
+                        alt="Doctor Strange in the Multiverse of Madness"
+                    >
+
+                    <div class="movie-info">
+
+                        <span class="movie-year">
+                            2022
+                        </span>
+
+                        <h3>
+                            Doctor Strange in the Multiverse of Madness
+                        </h3>
+
+                        <p>
+                            Доктор Стрэндж путешествует
+                            между различными реальностями.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- QUANTUMANIA -->
+
+                <div class="movie-card">
+
+                    <img
+                        src="images/ant-man-and-the-wasp-quantumania.jpg"
+                        alt="Ant-Man and the Wasp Quantumania"
+                    >
+
+                    <div class="movie-info">
+
+                        <span class="movie-year">
+                            2023
+                        </span>
+
+                        <h3>
+                            Ant-Man and the Wasp: Quantumania
+                        </h3>
+
+                        <p>
+                            Герои оказываются в квантовом мире
+                            и сталкиваются с новой угрозой.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- AVENGERS DOOMSDAY -->
+
+                <div class="movie-card">
+
+                    <img
+                        src="images/avengers-doomsday.jpg"
+                        alt="Avengers Doomsday"
+                    >
+
+                    <div class="movie-info">
+
+                        <span class="movie-year">
+                            2026
+                        </span>
+
+                        <h3>
+                            Avengers: Doomsday
+                        </h3>
+
+                        <p>
+                            Новая масштабная история Avengers
+                            в рамках Multiverse Saga.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SECRET WARS -->
+
+                <div class="movie-card">
+
+                    <img
+                        src="images/avengers-secret-wars.jpg"
+                        alt="Avengers Secret Wars"
+                    >
+
+                    <div class="movie-info">
+
+                        <span class="movie-year">
+                            2027
+                        </span>
+
+                        <h3>
+                            Avengers: Secret Wars
+                        </h3>
+
+                        <p>
+                            Одна из главных будущих историй
+                            Multiverse Saga.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+</main>
+
+
+
+<footer>
+
+    <p>
+        <strong>MARVEL TIMELINE</strong>
+    </p>
+
+    <p style="margin-top:20px;">
+        Твой путь по вселенной MCU.
+    </p>
+
+    <p style="margin-top:20px;">
+        Fan project • Not affiliated with Marvel Studios
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

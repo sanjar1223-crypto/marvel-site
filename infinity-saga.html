@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Marvel Timeline — Infinity Saga</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        .saga-page {
+            min-height: 100vh;
+            padding: 120px 7% 80px;
+        }
+
+        .saga-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #999;
+            text-decoration: none;
+            margin-bottom: 35px;
+            transition: 0.3s;
+        }
+
+        .back-link:hover {
+            color: #e62429;
+        }
+
+        .saga-header {
+            text-align: center;
+            margin-bottom: 65px;
+        }
+
+        .saga-label {
+            color: #e62429;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .saga-header h1 {
+            font-size: 52px;
+            margin: 12px 0 20px;
+        }
+
+        .saga-header p {
+            max-width: 750px;
+            margin: auto;
+            color: #999;
+            line-height: 1.7;
+        }
+
+
+        /* PHASES */
+
+        .saga-section {
+            margin-bottom: 70px;
+        }
+
+        .saga-section-title {
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+
+        .phase-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 25px 30px;
+            margin-bottom: 15px;
+
+            background: #161616;
+            border: 1px solid #292929;
+            border-radius: 14px;
+
+            color: white;
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+        .phase-box:hover {
+            border-color: #e62429;
+            transform: translateX(5px);
+        }
+
+        .phase-box-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .phase-number {
+            color: #e62429;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .phase-box h3 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .phase-arrow {
+            color: #777;
+            font-size: 20px;
+        }
+
+
+        /* MOVIES */
+
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .movie-card {
+            background: #161616;
+            border: 1px solid #292929;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-6px);
+            border-color: #e62429;
+        }
+
+        .movie-card img {
+            width: 100%;
+            height: 390px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .movie-info {
+            padding: 20px;
+        }
+
+        .movie-year {
+            color: #e62429;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .movie-info h3 {
+            font-size: 19px;
+            margin: 8px 0 10px;
+        }
+
+        .movie-info p {
+            color: #999;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+
+        @media (max-width: 850px) {
+
+            .movie-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .saga-header h1 {
+                font-size: 42px;
+            }
+
+        }
+
+
+        @media (max-width: 550px) {
+
+            .saga-page {
+                padding: 100px 20px 60px;
+            }
+
+            .movie-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .saga-header h1 {
+                font-size: 35px;
+            }
+
+            .phase-box {
+                padding: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <a href="index.html" class="logo logo-link">
+        MARVEL<span>TIMELINE</span>
+    </a>
+
+    <nav>
+
+        <a href="index.html">
+            Главная
+        </a>
+
+        <a href="movies.html">
+            Фильмы и сериалы
+        </a>
+
+        <a href="characters.html">
+            Персонажи
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<main class="saga-page">
+
+    <div class="saga-container">
+
+
+        <a
+            href="phases-sagas.html"
+            class="back-link"
+        >
+            ← Назад к фазам и сагам
+        </a>
+
+
+
+        <!-- HEADER -->
+
+        <div class="saga-header">
+
+            <span class="saga-label">
+                MARVEL CINEMATIC UNIVERSE
+            </span>
+
+            <h1>
+                Infinity Saga
+            </h1>
+
+            <p>
+                Infinity Saga — большая история первых трёх фаз
+                кинематографической вселенной Marvel.
+                Она постепенно объединяет героев MCU и приводит
+                их к масштабному противостоянию с Таносом.
+            </p>
+
+        </div>
+
+
+
+        <!-- PHASES -->
+
+        <section class="saga-section">
+
+            <h2 class="saga-section-title">
+                Фазы Infinity Saga
+            </h2>
+
+
+            <a
+                href="phase1.html"
+                class="phase-box"
+            >
+
+                <div class="phase-box-left">
+
+                    <span class="phase-number">
+                        PHASE 1
+                    </span>
+
+                    <h3>
+                        Первая фаза
+                    </h3>
+
+                </div>
+
+                <span class="phase-arrow">
+                    →
+                </span>
+
+            </a>
+
+
+            <a
+                href="phase2.html"
+                class="phase-box"
+            >
+
+                <div class="phase-box-left">
+
+                    <span class="phase-number">
+                        PHASE 2
+                    </span>
+
+                    <h3>
+                        Вторая фаза
+                    </h3>
+
+                </div>
+
+                <span class="phase-arrow">
+                    →
+                </span>
+
+            </a>
+
+
+            <a
+                href="phase3.html"
+                class="phase-box"
+            >
+
+                <div class="phase-box-left">
+
+                    <span class="phase-number">
+                        PHASE 3
+                    </span>
+
+                    <h3>
+                        Третья фаза
+                    </h3>
+
+                </div>
+
+                <span class="phase-arrow">
+                    →
+                </span>
+
+            </a>
+
+        </section>
+
+
+
+        <!-- IMPORTANT MOVIES -->
+
+        <section class="saga-section">
+
+            <h2 class="saga-section-title">
+                Главные фильмы саги
+            </h2>
+
+
+            <div class="movie-grid">
+
+
+                <!-- AVENGERS -->
+
+                <div class="movie-card">
+
+                    <img
+                        src="images/the-avengers.jpg"
+                        alt="The Avengers"
+                    >
+
+                    <div class="movie-info">
+
+                        <span class="movie-year">
+                            2012
+                        </span>
+
+                        <h3>
+                            The Avengers
+                        </h3>
+
+                        <p>
+                            Герои впервые объединяются
+                            в одну команду Avengers.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- AGE OF ULTRON -->
+
+                <div class="movie-card">
+
+                    <img
+                        src="images/avengers-age-of-ultron.jpg"
+                        alt="Avengers Age of Ultron"
+                    >
+
+                    <div class="movie-info">
+
+                        <span class="movie-year">
+                            2015
+                        </span>
+
+                        <h3>
+                            Avengers: Age of Ultron
+                        </h3>
+
+                        <p>
+                            Мстители сталкиваются
+                            с новой угрозой.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CIVIL WAR -->
+
+                <div class="movie-card">
+
+                    <img
+                        src="images/civil-war.jpg"
+                        alt="Captain America Civil War"
+                    >
+
+                    <div class="movie-info">
+
+                        <span class="movie-year">
+                            2016
+                        </span>
+
+                        <h3>
+                            Captain America: Civil War
+                        </h3>
+
+                        <p>
+                            Конфликт разделяет героев
+                            Avengers на две стороны.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- INFINITY WAR -->
+
+                <div class="movie-card">
+
+                    <img
+                        src="images/infinity-war.jpg"
+                        alt="Avengers Infinity War"
+                    >
+
+                    <div class="movie-info">
+
+                        <span class="movie-year">
+                            2018
+                        </span>
+
+                        <h3>
+                            Avengers: Infinity War
+                        </h3>
+
+                        <p>
+                            Танос начинает осуществлять
+                            свой план с Камнями Бесконечности.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ENDGAME -->
+
+                <div class="movie-card">
+
+                    <img
+                        src="images/endgame.jpg"
+                        alt="Avengers Endgame"
+                    >
+
+                    <div class="movie-info">
+
+                        <span class="movie-year">
+                            2019
+                        </span>
+
+                        <h3>
+                            Avengers: Endgame
+                        </h3>
+
+                        <p>
+                            Герои пытаются исправить
+                            последствия предыдущих событий.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+</main>
+
+
+
+<footer>
+
+    <p>
+        <strong>MARVEL TIMELINE</strong>
+    </p>
+
+    <p style="margin-top:20px;">
+        Твой путь по вселенной MCU.
+    </p>
+
+    <p style="margin-top:20px;">
+        Fan project • Not affiliated with Marvel Studios
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
