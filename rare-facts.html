@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Marvel Timeline — Редкие факты</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        .facts-page {
+            min-height: 100vh;
+            padding: 120px 7% 80px;
+        }
+
+        .facts-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #999;
+            text-decoration: none;
+            margin-bottom: 35px;
+            transition: 0.3s;
+        }
+
+        .back-link:hover {
+            color: #e62429;
+        }
+
+        .facts-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .facts-label {
+            color: #e62429;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .facts-header h1 {
+            font-size: 52px;
+            margin: 12px 0 18px;
+        }
+
+        .facts-header p {
+            max-width: 700px;
+            margin: auto;
+            color: #999;
+            line-height: 1.7;
+        }
+
+
+        /* FACTS */
+
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .fact-card {
+            background: #161616;
+            border: 1px solid #292929;
+            border-radius: 15px;
+            padding: 28px;
+
+            transition: 0.3s;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-6px);
+            border-color: #e62429;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+        }
+
+        .fact-icon {
+            font-size: 32px;
+            margin-bottom: 18px;
+        }
+
+        .fact-number {
+            color: #e62429;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .fact-card h2 {
+            font-size: 20px;
+            margin: 10px 0 12px;
+        }
+
+        .fact-card p {
+            color: #999;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 850px) {
+
+            .facts-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .facts-header h1 {
+                font-size: 42px;
+            }
+
+        }
+
+
+        @media (max-width: 550px) {
+
+            .facts-page {
+                padding: 100px 20px 60px;
+            }
+
+            .facts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .facts-header h1 {
+                font-size: 35px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <a href="index.html" class="logo logo-link">
+        MARVEL<span>TIMELINE</span>
+    </a>
+
+
+    <nav>
+
+        <a href="index.html">
+            Главная
+        </a>
+
+        <a href="movies.html">
+            Фильмы и сериалы
+        </a>
+
+        <a href="characters.html">
+            Персонажи
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<main class="facts-page">
+
+    <div class="facts-container">
+
+
+        <a
+            href="index.html"
+            class="back-link"
+        >
+            ← Назад на главную
+        </a>
+
+
+
+        <div class="facts-header">
+
+            <span class="facts-label">
+                MARVEL TIMELINE
+            </span>
+
+            <h1>
+                Редкие факты
+            </h1>
+
+            <p>
+                Интересные факты о персонажах, фильмах,
+                командах и событиях вселенной Marvel.
+            </p>
+
+        </div>
+
+
+
+        <div class="facts-grid">
+
+
+            <!-- FACT 1 -->
+
+            <div class="fact-card">
+
+                <div class="fact-icon">
+                    💡
+                </div>
+
+                <span class="fact-number">
+                    ФАКТ 01
+                </span>
+
+                <h2>
+                    Начало MCU
+                </h2>
+
+                <p>
+                    Киновселенная Marvel началась с фильма
+                    «Железный человек», который вышел в 2008 году.
+                    Именно он стал отправной точкой MCU.
+                </p>
+
+            </div>
+
+
+
+            <!-- FACT 2 -->
+
+            <div class="fact-card">
+
+                <div class="fact-icon">
+                    🦾
+                </div>
+
+                <span class="fact-number">
+                    ФАКТ 02
+                </span>
+
+                <h2>
+                    Железный человек
+                </h2>
+
+                <p>
+                    Первый фильм MCU познакомил зрителей
+                    с Тони Старком и его первой версией
+                    костюма Железного человека.
+                </p>
+
+            </div>
+
+
+
+            <!-- FACT 3 -->
+
+            <div class="fact-card">
+
+                <div class="fact-icon">
+                    🛡️
+                </div>
+
+                <span class="fact-number">
+                    ФАКТ 03
+                </span>
+
+                <h2>
+                    Капитан Америка
+                </h2>
+
+                <p>
+                    История Стива Роджерса начинается ещё
+                    во времена Второй мировой войны,
+                    задолго до создания Avengers.
+                </p>
+
+            </div>
+
+
+
+            <!-- FACT 4 -->
+
+            <div class="fact-card">
+
+                <div class="fact-icon">
+                    🔨
+                </div>
+
+                <span class="fact-number">
+                    ФАКТ 04
+                </span>
+
+                <h2>
+                    Мьёльнир
+                </h2>
+
+                <p>
+                    Молот Тора является одним из самых
+                    известных артефактов Marvel и связан
+                    с достоинством своего владельца.
+                </p>
+
+            </div>
+
+
+
+            <!-- FACT 5 -->
+
+            <div class="fact-card">
+
+                <div class="fact-icon">
+                    🌌
+                </div>
+
+                <span class="fact-number">
+                    ФАКТ 05
+                </span>
+
+                <h2>
+                    Мультивселенная
+                </h2>
+
+                <p>
+                    В MCU существуют разные вселенные
+                    и альтернативные версии персонажей.
+                    Эта идея стала особенно важной
+                    во второй большой саге MCU.
+                </p>
+
+            </div>
+
+
+
+            <!-- FACT 6 -->
+
+            <div class="fact-card">
+
+                <div class="fact-icon">
+                    💎
+                </div>
+
+                <span class="fact-number">
+                    ФАКТ 06
+                </span>
+
+                <h2>
+                    Камни Бесконечности
+                </h2>
+
+                <p>
+                    Камни Бесконечности стали одной
+                    из главных сюжетных линий первых
+                    трёх фаз MCU.
+                </p>
+
+            </div>
+
+
+
+            <!-- FACT 7 -->
+
+            <div class="fact-card">
+
+                <div class="fact-icon">
+                    🕷️
+                </div>
+
+                <span class="fact-number">
+                    ФАКТ 07
+                </span>
+
+                <h2>
+                    Человек-паук
+                </h2>
+
+                <p>
+                    Человек-паук стал одним из ключевых
+                    молодых героев современного MCU.
+                </p>
+
+            </div>
+
+
+
+            <!-- FACT 8 -->
+
+            <div class="fact-card">
+
+                <div class="fact-icon">
+                    🪐
+                </div>
+
+                <span class="fact-number">
+                    ФАКТ 08
+                </span>
+
+                <h2>
+                    Стражи Галактики
+                </h2>
+
+                <p>
+                    Стражи Галактики расширили MCU
+                    далеко за пределы Земли и показали
+                    большое количество космических миров.
+                </p>
+
+            </div>
+
+
+
+            <!-- FACT 9 -->
+
+            <div class="fact-card">
+
+                <div class="fact-icon">
+                    🌀
+                </div>
+
+                <span class="fact-number">
+                    ФАКТ 09
+                </span>
+
+                <h2>
+                    Доктор Стрэндж
+                </h2>
+
+                <p>
+                    Появление Доктора Стрэнджа добавило
+                    в MCU магию и совершенно новый
+                    взгляд на устройство вселенной.
+                </p>
+
+            </div>
+
+
+
+            <!-- FACT 10 -->
+
+            <div class="fact-card">
+
+                <div class="fact-icon">
+                    ⚡
+                </div>
+
+                <span class="fact-number">
+                    ФАКТ 10
+                </span>
+
+                <h2>
+                    Мстители
+                </h2>
+
+                <p>
+                    Marvel постепенно знакомила зрителей
+                    с отдельными героями, прежде чем
+                    объединить их в команду Avengers.
+                </p>
+
+            </div>
+
+
+
+            <!-- FACT 11 -->
+
+            <div class="fact-card">
+
+                <div class="fact-icon">
+                    ⏳
+                </div>
+
+                <span class="fact-number">
+                    ФАКТ 11
+                </span>
+
+                <h2>
+                    Время
+                </h2>
+
+                <p>
+                    Путешествия во времени стали важной
+                    частью событий, связанных с финалом
+                    Infinity Saga.
+                </p>
+
+            </div>
+
+
+
+            <!-- FACT 12 -->
+
+            <div class="fact-card">
+
+                <div class="fact-icon">
+                    🎬
+                </div>
+
+                <span class="fact-number">
+                    ФАКТ 12
+                </span>
+
+                <h2>
+                    Большая история
+                </h2>
+
+                <p>
+                    Первые три фазы MCU образуют
+                    Infinity Saga, которая включает
+                    23 фильма от Iron Man до
+                    Spider-Man: Far From Home.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</main>
+
+
+
+<footer>
+
+    <p>
+        <strong>MARVEL TIMELINE</strong>
+    </p>
+
+    <p style="margin-top:20px;">
+        Твой путь по вселенной MCU.
+    </p>
+
+    <p style="margin-top:20px;">
+        Fan project • Not affiliated with Marvel Studios
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
