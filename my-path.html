@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Marvel Timeline — Мой путь</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        .path-page {
+            min-height: 100vh;
+            padding: 120px 7% 80px;
+        }
+
+        .path-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #999;
+            text-decoration: none;
+            margin-bottom: 35px;
+        }
+
+        .back-link:hover {
+            color: #e62429;
+        }
+
+        .path-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .path-label {
+            color: #e62429;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .path-header h1 {
+            font-size: 48px;
+            margin: 12px 0;
+        }
+
+        .path-header p {
+            color: #999;
+            line-height: 1.7;
+        }
+
+
+        /* QUESTIONS */
+
+        .question {
+            background: #161616;
+            border: 1px solid #292929;
+            border-radius: 15px;
+            padding: 28px;
+            margin-bottom: 22px;
+        }
+
+        .question h2 {
+            font-size: 20px;
+            margin: 0 0 8px;
+        }
+
+        .question-description {
+            color: #777;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .option {
+            position: relative;
+        }
+
+        .option input {
+            position: absolute;
+            opacity: 0;
+        }
+
+        .option label {
+            display: block;
+            padding: 15px 18px;
+
+            background: #101010;
+            border: 1px solid #303030;
+            border-radius: 10px;
+
+            color: #aaa;
+            cursor: pointer;
+
+            transition: 0.25s;
+        }
+
+        .option label:hover {
+            border-color: #777;
+            color: white;
+        }
+
+        .option input:checked + label {
+            border-color: #e62429;
+            background: #211010;
+            color: white;
+            box-shadow: 0 0 15px rgba(230, 36, 41, 0.12);
+        }
+
+
+        /* BUTTON */
+
+        .create-button {
+            width: 100%;
+            border: none;
+            border-radius: 10px;
+
+            padding: 17px;
+
+            background: #e62429;
+            color: white;
+
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 1px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .create-button:hover {
+            background: #ff3035;
+            transform: translateY(-2px);
+        }
+
+
+        /* RESULT */
+
+        #result {
+            display: none;
+            margin-top: 50px;
+        }
+
+        .result-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .result-header h2 {
+            font-size: 36px;
+            margin: 10px 0;
+        }
+
+        .result-header p {
+            color: #999;
+        }
+
+        .route {
+            position: relative;
+        }
+
+        .route-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            background: #161616;
+            border: 1px solid #292929;
+            border-radius: 14px;
+
+            padding: 15px;
+            margin-bottom: 14px;
+
+            transition: 0.3s;
+        }
+
+        .route-item:hover {
+            border-color: #e62429;
+            transform: translateX(5px);
+        }
+
+        .route-number {
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            flex-shrink: 0;
+
+            background: #e62429;
+            border-radius: 50%;
+
+            font-weight: bold;
+        }
+
+        .route-poster {
+            width: 65px;
+            height: 90px;
+
+            object-fit: cover;
+            border-radius: 7px;
+
+            flex-shrink: 0;
+        }
+
+        .route-info h3 {
+            margin: 0 0 6px;
+            font-size: 17px;
+        }
+
+        .route-info span {
+            color: #e62429;
+            font-size: 11px;
+        }
+
+        .route-info p {
+            color: #888;
+            font-size: 12px;
+            margin-top: 7px;
+        }
+
+        .restart-button {
+            width: 100%;
+            margin-top: 25px;
+
+            padding: 14px;
+
+            background: transparent;
+            border: 1px solid #444;
+            border-radius: 10px;
+
+            color: #aaa;
+            cursor: pointer;
+        }
+
+        .restart-button:hover {
+            border-color: #e62429;
+            color: white;
+        }
+
+
+        @media (max-width: 600px) {
+
+            .path-page {
+                padding: 100px 20px 60px;
+            }
+
+            .path-header h1 {
+                font-size: 35px;
+            }
+
+            .options {
+                grid-template-columns: 1fr;
+            }
+
+            .route-item {
+                gap: 12px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <a href="index.html" class="logo logo-link">
+        MARVEL<span>TIMELINE</span>
+    </a>
+
+    <nav>
+
+        <a href="index.html">
+            Главная
+        </a>
+
+        <a href="movies.html">
+            Фильмы и сериалы
+        </a>
+
+        <a href="characters.html">
+            Персонажи
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<main class="path-page">
+
+    <div class="path-container">
+
+
+        <a href="index.html" class="back-link">
+            ← Назад на главную
+        </a>
+
+
+        <div class="path-header">
+
+            <span class="path-label">
+                MARVEL TIMELINE
+            </span>
+
+            <h1>
+                Создай свой путь
+            </h1>
+
+            <p>
+                Ответь на несколько вопросов, и сайт
+                подберёт маршрут по MCU специально для тебя.
+            </p>
+
+        </div>
+
+
+
+        <!-- QUESTION 1 -->
+
+        <div class="question">
+
+            <h2>
+                🎭 Что тебе больше всего интересно?
+            </h2>
+
+            <p class="question-description">
+                Выбери один вариант.
+            </p>
+
+            <div class="options">
+
+                <div class="option">
+                    <input type="radio" name="interest" id="action" value="action">
+                    <label for="action">🔥 Экшен и сражения</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="interest" id="space" value="space">
+                    <label for="space">🌌 Космос и приключения</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="interest" id="magic" value="magic">
+                    <label for="magic">🌀 Магия и мультивселенная</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="interest" id="spy" value="spy">
+                    <label for="spy">🕵️ Шпионаж и технологии</label>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- QUESTION 2 -->
+
+        <div class="question">
+
+            <h2>
+                🦸 Кто тебе больше нравится?
+            </h2>
+
+            <p class="question-description">
+                Выбери любимого персонажа.
+            </p>
+
+            <div class="options">
+
+                <div class="option">
+                    <input type="radio" name="hero" id="ironman" value="ironman">
+                    <label for="ironman">🦾 Iron Man</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="hero" id="spiderman" value="spiderman">
+                    <label for="spiderman">🕷️ Spider-Man</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="hero" id="thor" value="thor">
+                    <label for="thor">⚡ Thor</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="hero" id="strange" value="strange">
+                    <label for="strange">🌀 Doctor Strange</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="hero" id="captain" value="captain">
+                    <label for="captain">🛡️ Captain America</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="hero" id="guardians" value="guardians">
+                    <label for="guardians">🚀 Guardians of the Galaxy</label>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- QUESTION 3 -->
+
+        <div class="question">
+
+            <h2>
+                🎮 Что тебе нравится смотреть?
+            </h2>
+
+            <p class="question-description">
+                Выбери то, что ближе всего.
+            </p>
+
+            <div class="options">
+
+                <div class="option">
+                    <input type="radio" name="style" id="heroes" value="heroes">
+                    <label for="heroes">🦸 Истории супергероев</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="style" id="team" value="team">
+                    <label for="team">👥 Командные истории</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="style" id="cosmos" value="cosmos">
+                    <label for="cosmos">🚀 Космические истории</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="style" id="multiverse" value="multiverse">
+                    <label for="multiverse">🌌 Мультивселенная</label>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- QUESTION 4 -->
+
+        <div class="question">
+
+            <h2>
+                ⏱️ Сколько у тебя свободного времени?
+            </h2>
+
+            <p class="question-description">
+                Это поможет определить размер маршрута.
+            </p>
+
+            <div class="options">
+
+                <div class="option">
+                    <input type="radio" name="time" id="little" value="little">
+                    <label for="little">⏱️ Мало времени</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="time" id="normal" value="normal">
+                    <label for="normal">🕐 Несколько часов</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="time" id="much" value="much">
+                    <label for="much">📅 Много свободного времени</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="time" id="all" value="all">
+                    <label for="all">🔥 Хочу посмотреть всё</label>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- QUESTION 5 -->
+
+        <div class="question">
+
+            <h2>
+                🌠 Что ты хочешь получить?
+            </h2>
+
+            <p class="question-description">
+                Выбери предпочитаемый тип маршрута.
+            </p>
+
+            <div class="options">
+
+                <div class="option">
+                    <input type="radio" name="preference" id="mainstory" value="mainstory">
+                    <label for="mainstory">📖 Главная история MCU</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="preference" id="infinity" value="infinity">
+                    <label for="infinity">💎 Infinity Saga</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="preference" id="multi" value="multi">
+                    <label for="multi">🌌 Multiverse Saga</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" name="preference" id="character" value="character">
+                    <label for="character">🦸 Путь любимого героя</label>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <button
+            class="create-button"
+            onclick="createMyPath()"
+        >
+            СОЗДАТЬ МОЙ ПУТЬ →
+        </button>
+
+
+
+        <!-- RESULT -->
+
+        <section id="result">
+
+            <div class="result-header">
+
+                <span class="path-label">
+                    ТВОЙ ПЕРСОНАЛЬНЫЙ МАРШРУТ
+                </span>
+
+                <h2 id="resultTitle">
+                    Твой путь MCU
+                </h2>
+
+                <p id="resultDescription">
+                    Мы подобрали фильмы специально для тебя.
+                </p>
+
+            </div>
+
+
+            <div
+                class="route"
+                id="route"
+            ></div>
+
+
+            <button
+                class="restart-button"
+                onclick="restartPath()"
+            >
+                ← ПРОЙТИ ТЕСТ ЕЩЁ РАЗ
+            </button>
+
+        </section>
+
+
+    </div>
+
+</main>
+
+
+
+<footer>
+
+    <p>
+        <strong>MARVEL TIMELINE</strong>
+    </p>
+
+    <p style="margin-top:20px;">
+        Твой путь по вселенной MCU.
+    </p>
+
+    <p style="margin-top:20px;">
+        Fan project • Not affiliated with Marvel Studios
+    </p>
+
+</footer>
+
+
+
+<script>
+
+const movies = {
+
+    ironman: {
+        title: "Iron Man",
+        year: "2008",
+        phase: "Phase 1",
+        image: "images/iron-man.jpg",
+        description: "История Тони Старка и начало MCU."
+    },
+
+    hulk: {
+        title: "The Incredible Hulk",
+        year: "2008",
+        phase: "Phase 1",
+        image: "images/the-incredible-hulk.jpg",
+        description: "История Брюса Бэннера и Халка."
+    },
+
+    ironman2: {
+        title: "Iron Man 2",
+        year: "2010",
+        phase: "Phase 1",
+        image: "images/iron-man-2.jpg",
+        description: "Тони Старк сталкивается с новыми противниками."
+    },
+
+    thor: {
+        title: "Thor",
+        year: "2011",
+        phase: "Phase 1",
+        image: "images/thor.jpg",
+        description: "Тор впервые оказывается на Земле."
+    },
+
+    captain: {
+        title: "Captain America: The First Avenger",
+        year: "2011",
+        phase: "Phase 1",
+        image: "images/the-first-avenger.jpg",
+        description: "Начало истории Стива Роджерса."
+    },
+
+    avengers: {
+        title: "The Avengers",
+        year: "2012",
+        phase: "Phase 1",
+        image: "images/the-avengers.jpg",
+        description: "Герои объединяются в команду Avengers."
+    },
+
+    guardians: {
+        title: "Guardians of the Galaxy",
+        year: "2014",
+        phase: "Phase 2",
+        image: "images/guardians-of-the-galaxy.jpg",
+        description: "Космическое приключение необычной команды."
+    },
+
+    ultron: {
+        title: "Avengers: Age of Ultron",
+        year: "2015",
+        phase: "Phase 2",
+        image: "images/avengers-age-of-ultron.jpg",
+        description: "Мстители сталкиваются с новой угрозой."
+    },
+
+    civilwar: {
+        title: "Captain America: Civil War",
+        year: "2016",
+        phase: "Phase 3",
+        image: "images/civil-war.jpg",
+        description: "Конфликт разделяет команду Avengers."
+    },
+
+    strange: {
+        title: "Doctor Strange",
+        year: "2016",
+        phase: "Phase 3",
+        image: "images/doctor-strange.jpg",
+        description: "Стивен Стрэндж открывает мир магии."
+    },
+
+    spiderman: {
+        title: "Spider-Man: Homecoming",
+        year: "2017",
+        phase: "Phase 3",
+        image: "images/spider-man-homecoming.jpg",
+        description: "Питер Паркер начинает самостоятельный путь героя."
+    },
+
+    thorRagnarok: {
+        title: "Thor: Ragnarok",
+        year: "2017",
+        phase: "Phase 3",
+        image: "images/thor-ragnarok.jpg",
+        description: "Тор пытается спасти Асгард."
+    },
+
+    blackpanther: {
+        title: "Black Panther",
+        year: "2018",
+        phase: "Phase 3",
+        image: "images/black-panther.jpg",
+        description: "Т'Чалла становится королём Ваканды."
+    },
+
+    infinitywar: {
+        title: "Avengers: Infinity War",
+        year: "2018",
+        phase: "Phase 3",
+        image: "images/infinity-war.jpg",
+        description: "Герои сталкиваются с Таносом."
+    },
+
+    endgame: {
+        title: "Avengers: Endgame",
+        year: "2019",
+        phase: "Phase 3",
+        image: "images/endgame.jpg",
+        description: "Финальная глава Infinity Saga."
+    },
+
+    farfromhome: {
+        title: "Spider-Man: Far From Home",
+        year: "2019",
+        phase: "Phase 3",
+        image: "images/spider-man-far-from-home.jpg",
+        description: "Питер Паркер сталкивается с последствиями Endgame."
+    },
+
+    loki: {
+        title: "Loki",
+        year: "2021",
+        phase: "Phase 4",
+        image: "images/loki.jpg",
+        description: "История Локи связана с развитием мультивселенной."
+    },
+
+    nowayhome: {
+        title: "Spider-Man: No Way Home",
+        year: "2021",
+        phase: "Phase 4",
+        image: "images/spider-man-no-way-home.jpg",
+        description: "Питер Паркер сталкивается с последствиями нарушения границ реальности."
+    },
+
+    strangeMultiverse: {
+        title: "Doctor Strange in the Multiverse of Madness",
+        year: "2022",
+        phase: "Phase 4",
+        image: "images/doctor-strange-in-the-multiverse-of-madness.jpg",
+        description: "Доктор Стрэндж исследует мультивселенную."
+    },
+
+    guardians3: {
+        title: "Guardians of the Galaxy Vol. 3",
+        year: "2023",
+        phase: "Phase 5",
+        image: "images/guardians-of-the-galaxy-3.jpg",
+        description: "Новое приключение Стражей Галактики."
+    },
+
+    quantumania: {
+        title: "Ant-Man and the Wasp: Quantumania",
+        year: "2023",
+        phase: "Phase 5",
+        image: "images/ant-man-and-the-wasp-quantumania.jpg",
+        description: "Герои оказываются в квантовом мире."
+    }
+
+};
+
+
+
+function getAnswer(name) {
+
+    const answer = document.querySelector(
+        'input[name="' + name + '"]:checked'
+    );
+
+    return answer ? answer.value : null;
+
+}
+
+
+
+function createMyPath() {
+
+    const interest = getAnswer("interest");
+    const hero = getAnswer("hero");
+    const style = getAnswer("style");
+    const time = getAnswer("time");
+    const preference = getAnswer("preference");
+
+
+    if (
+        !interest ||
+        !hero ||
+        !style ||
+        !time ||
+        !preference
+    ) {
+
+        alert(
+            "Пожалуйста, ответь на все вопросы."
+        );
+
+        return;
+
+    }
+
+
+    let route = [];
+    let title = "Твой путь MCU";
+    let description =
+        "Мы подобрали маршрут на основе твоих ответов.";
+
+
+    /* ОСНОВНОЙ ВЫБОР */
+
+    if (preference === "infinity") {
+
+        route = [
+            movies.ironman,
+            movies.avengers,
+            movies.guardians,
+            movies.civilwar,
+            movies.infinitywar,
+            movies.endgame
+        ];
+
+        title = "Infinity Saga";
+        description =
+            "Твой путь через главную историю первых трёх фаз MCU.";
+
+    }
+
+
+    else if (preference === "multi") {
+
+        route = [
+            movies.loki,
+            movies.nowayhome,
+            movies.strangeMultiverse,
+            movies.quantumania,
+            movies.guardians3
+        ];
+
+        title = "Multiverse Saga";
+        description =
+            "Маршрут для знакомства с мультивселенной MCU.";
+
+    }
+
+
+    else if (preference === "character") {
+
+        if (hero === "ironman") {
+
+            route = [
+                movies.ironman,
+                movies.ironman2,
+                movies.avengers,
+                movies.ultron,
+                movies.civilwar,
+                movies.infinitywar,
+                movies.endgame
+            ];
+
+            title = "Путь Iron Man";
+
+        }
+
+
+        else if (hero === "spiderman") {
+
+            route = [
+                movies.civilwar,
+                movies.spiderman,
+                movies.infinitywar,
+                movies.endgame,
+                movies.farfromhome,
+                movies.nowayhome
+            ];
+
+            title = "Путь Spider-Man";
+
+        }
+
+
+        else if (hero === "thor") {
+
+            route = [
+                movies.thor,
+                movies.avengers,
+                movies.ultron,
+                movies.thorRagnarok,
+                movies.infinitywar,
+                movies.endgame
+            ];
+
+            title = "Путь Thor";
+
+        }
+
+
+        else if (hero === "strange") {
+
+            route = [
+                movies.strange,
+                movies.infinitywar,
+                movies.endgame,
+                movies.nowayhome,
+                movies.strangeMultiverse
+            ];
+
+            title = "Путь Doctor Strange";
+
+        }
+
+
+        else if (hero === "captain") {
+
+            route = [
+                movies.captain,
+                movies.avengers,
+                movies.civilwar,
+                movies.infinitywar,
+                movies.endgame
+            ];
+
+            title = "Путь Captain America";
+
+        }
+
+
+        else {
+
+            route = [
+                movies.guardians,
+                movies.infinitywar,
+                movies.endgame,
+                movies.guardians3
+            ];
+
+            title = "Путь Guardians of the Galaxy";
+
+        }
+
+    }
+
+
+    else {
+
+
+        /* ЭКШЕН */
+
+        if (interest === "action") {
+
+            route = [
+                movies.ironman,
+                movies.avengers,
+                movies.ultron,
+                movies.civilwar,
+                movies.infinitywar,
+                movies.endgame
+            ];
+
+        }
+
+
+        /* КОСМОС */
+
+        else if (interest === "space") {
+
+            route = [
+                movies.guardians,
+                movies.infinitywar,
+                movies.endgame,
+                movies.guardians3
+            ];
+
+        }
+
+
+        /* МАГИЯ */
+
+        else if (interest === "magic") {
+
+            route = [
+                movies.strange,
+                movies.infinitywar,
+                movies.endgame,
+                movies.loki,
+                movies.strangeMultiverse
+            ];
+
+        }
+
+
+        /* ШПИОНАЖ */
+
+        else {
+
+            route = [
+                movies.ironman,
+                movies.ironman2,
+                movies.avengers,
+                movies.civilwar
+            ];
+
+        }
+
+    }
+
+
+    /* КОЛИЧЕСТВО ФИЛЬМОВ */
+
+    if (time === "little") {
+
+        route = route.slice(0, 3);
+
+    }
+
+    else if (time === "normal") {
+
+        route = route.slice(0, 5);
+
+    }
+
+
+    else if (time === "all") {
+
+        // Оставляем полный маршрут
+
+    }
+
+
+    renderRoute(
+        route,
+        title,
+        description
+    );
+
+}
+
+
+
+function renderRoute(
+    route,
+    title,
+    description
+) {
+
+    const result =
+        document.getElementById("result");
+
+    const routeElement =
+        document.getElementById("route");
+
+    document.getElementById(
+        "resultTitle"
+    ).textContent = title;
+
+    document.getElementById(
+        "resultDescription"
+    ).textContent = description;
+
+
+    routeElement.innerHTML = "";
+
+
+    route.forEach(function(movie, index) {
+
+        const item =
+            document.createElement("div");
+
+        item.className = "route-item";
+
+
+        item.innerHTML = `
+
+            <div class="route-number">
+                ${index + 1}
+            </div>
+
+            <img
+                class="route-poster"
+                src="${movie.image}"
+                alt="${movie.title}"
+            >
+
+            <div class="route-info">
+
+                <span>
+                    ${movie.year} • ${movie.phase}
+                </span>
+
+                <h3>
+                    ${movie.title}
+                </h3>
+
+                <p>
+                    ${movie.description}
+                </p>
+
+            </div>
+
+        `;
+
+
+        routeElement.appendChild(item);
+
+    });
+
+
+    result.style.display = "block";
+
+
+    result.scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+
+
+function restartPath() {
+
+    document.getElementById(
+        "result"
+    ).style.display = "none";
+
+
+    document.querySelectorAll(
+        'input[type="radio"]'
+    ).forEach(function(input) {
+
+        input.checked = false;
+
+    });
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+</script>
+
+
+</body>
+
+</html>
