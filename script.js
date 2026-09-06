@@ -255,9 +255,9 @@ function setupCatalog() {
 // ================= ОТКРЫТИЕ ПЛЕЕРА =================
 
 function openWatchPage(title) {
-    window.location.href = "movie.html?movie=" + encodeURIComponent(title);
+    window.location.href =
+        "movie.html?movie=" + title;
 }
-
 
 // ================= СТРАНИЦА ПРОСМОТРА =================
 
