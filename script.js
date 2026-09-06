@@ -255,10 +255,7 @@ function setupCatalog() {
 // ================= ОТКРЫТИЕ ПЛЕЕРА =================
 
 function openWatchPage(title) {
-
-    window.location.href =
-        "watch.html?movie=" + title;
-
+    window.location.href = "movie.html?movie=" + encodeURIComponent(title);
 }
 
 

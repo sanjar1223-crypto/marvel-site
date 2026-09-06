@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Marvel Timeline — Фильм</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        .movie-page {
+            min-height: 100vh;
+            padding: 120px 7% 80px;
+        }
+
+        .movie-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 35px;
+            color: #999;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .back-link:hover {
+            color: #e62429;
+        }
+
+        .movie-hero {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .movie-poster {
+            width: 100%;
+            border-radius: 15px;
+            display: block;
+            object-fit: cover;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+        }
+
+        .movie-info h1 {
+            font-size: 52px;
+            margin: 0 0 15px;
+        }
+
+        .movie-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .movie-meta span {
+            padding: 7px 12px;
+            background: #181818;
+            border: 1px solid #303030;
+            border-radius: 7px;
+            color: #aaa;
+            font-size: 12px;
+        }
+
+        .movie-description {
+            color: #999;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        .movie-section {
+            margin-top: 60px;
+        }
+
+        .movie-section h2 {
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+
+        .characters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .character {
+            padding: 12px 16px;
+            background: #161616;
+            border: 1px solid #292929;
+            border-radius: 9px;
+            color: #ccc;
+        }
+
+        .trailer-box {
+            background: #111;
+            border: 1px solid #292929;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .trailer-box iframe {
+            display: block;
+            width: 100%;
+            height: 550px;
+            border: none;
+        }
+
+        .not-found {
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .not-found h1 {
+            font-size: 40px;
+        }
+
+        .not-found p {
+            color: #999;
+        }
+
+        @media (max-width: 750px) {
+
+            .movie-page {
+                padding: 100px 20px 60px;
+            }
+
+            .movie-hero {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .movie-poster {
+                max-width: 300px;
+                margin: auto;
+            }
+
+            .movie-info h1 {
+                font-size: 38px;
+            }
+
+            .trailer-box iframe {
+                height: 300px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <a href="index.html" class="logo logo-link">
+        MARVEL<span>TIMELINE</span>
+    </a>
+
+    <nav>
+
+        <a href="index.html">
+            Главная
+        </a>
+
+        <a href="my-path.html">
+            Мой путь
+        </a>
+
+        <a href="movies.html">
+            Фильмы и сериалы
+        </a>
+
+        <a href="index.html#timeline">
+            Хронология
+        </a>
+
+        <a href="rare-facts.html">
+            Факты
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<main class="movie-page">
+
+    <div class="movie-container">
+
+        <a
+            href="movies.html"
+            class="back-link">
+            ← Назад к фильмам
+        </a>
+
+
+        <div id="movieContent"></div>
+
+    </div>
+
+</main>
+
+
+
+<footer>
+
+    <p>
+        <strong>MARVEL TIMELINE</strong>
+    </p>
+
+    <p style="margin-top:15px;">
+        Твой путь по вселенной MCU.
+    </p>
+
+    <p style="margin-top:15px;">
+        Fan project • Not affiliated with Marvel Studios
+    </p>
+
+</footer>
+
+
+
+<script src="script.js"></script>
+
+
+<script>
+
+/*
+    Получаем название фильма
+    из адресной строки:
+
+    movie.html?movie=Iron%20Man
+*/
+
+const params = new URLSearchParams(
+    window.location.search
+);
+
+const movieTitle =
+    params.get("movie");
+
+
+const content =
+    document.getElementById("movieContent");
+
+
+
+/*
+    Ищем фильм в catalogItems,
+    который уже находится
+    в твоём script.js
+*/
+
+const movie =
+    typeof catalogItems !== "undefined"
+        ? catalogItems.find(
+            item =>
+                item.title.toLowerCase()
+                === decodeURIComponent(movieTitle || "")
+                .toLowerCase()
+        )
+        : null;
+
+
+
+if (!movie) {
+
+    content.innerHTML = `
+
+        <div class="not-found">
+
+            <h1>
+                Фильм не найден
+            </h1>
+
+            <p>
+                Вернись в каталог и выбери фильм ещё раз.
+            </p>
+
+        </div>
+
+    `;
+
+}
+else {
+
+    document.title =
+        "Marvel Timeline — " +
+        movie.title;
+
+
+    /*
+        Информация о фильме
+    */
+
+    content.innerHTML = `
+
+        <section class="movie-hero">
+
+            <div>
+
+                <img
+                    class="movie-poster"
+                    src="${movie.image}"
+                    alt="${movie.title}"
+                >
+
+            </div>
+
+
+            <div class="movie-info">
+
+                <h1>
+                    ${movie.title}
+                </h1>
+
+
+                <div class="movie-meta">
+
+                    <span>
+                        📅 ${movie.year}
+                    </span>
+
+                    <span>
+                        🔴 ${movie.phase}
+                    </span>
+
+                    <span>
+                        🎬 ${movie.type === "movie"
+                            ? "Фильм"
+                            : "Сериал"}
+                    </span>
+
+                </div>
+
+
+                <p class="movie-description">
+
+                    ${getMovieDescription(movie.title)}
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <section class="movie-section">
+
+            <h2>
+                🦸 Главные персонажи
+            </h2>
+
+
+            <div class="characters">
+
+                ${getCharacters(movie.title)}
+
+            </div>
+
+        </section>
+
+
+
+        <section class="movie-section">
+
+            <h2>
+                🎬 Официальный трейлер
+            </h2>
+
+
+            <div class="trailer-box">
+
+                <iframe
+                    id="trailerFrame"
+                    src=""
+                    title="Official Trailer"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+        </section>
+
+    `;
+
+
+    /*
+        Загружаем трейлер
+    */
+
+    const trailer =
+        getTrailer(movie.title);
+
+
+    const frame =
+        document.getElementById(
+            "trailerFrame"
+        );
+
+
+    if (trailer) {
+
+        frame.src =
+            "https://www.youtube.com/embed/" +
+            trailer;
+
+    }
+    else {
+
+        frame.style.display = "none";
+
+        frame.parentElement.innerHTML += `
+
+            <p style="
+                padding:25px;
+                color:#888;
+            ">
+                Трейлер пока не добавлен.
+            </p>
+
+        `;
+
+    }
+
+}
+
+
+
+/*
+    ОПИСАНИЯ
+*/
+
+function getMovieDescription(title) {
+
+    const descriptions = {
+
+        "Iron Man":
+            "Миллиардер и изобретатель Тони Старк создаёт высокотехнологичный костюм и становится Железным человеком. Эта история становится началом большой истории MCU.",
+
+        "The Incredible Hulk":
+            "Брюс Бэннер пытается найти способ избавиться от своего необычного состояния и одновременно скрывается от тех, кто хочет использовать его силу.",
+
+        "Iron Man 2":
+            "Тони Старк сталкивается с последствиями раскрытия своей личности и новыми противниками.",
+
+        "Thor":
+            "Асгардский принц Тор оказывается на Земле и учится ответственности, прежде чем вернуть свои способности.",
+
+        "Captain America: The First Avenger":
+            "Стив Роджерс становится суперсолдатом и вступает в борьбу с силами HYDRA.",
+
+        "The Avengers":
+            "Железный человек, Капитан Америка, Тор, Халк и другие герои объединяются, чтобы защитить Землю.",
+
+        "Guardians of the Galaxy":
+            "Питер Квилл и необычная команда героев оказываются втянуты в космический конфликт.",
+
+        "Avengers: Age of Ultron":
+            "Мстители создают искусственный интеллект, который выходит из-под контроля.",
+
+        "Captain America: Civil War":
+            "Конфликт между героями приводит к расколу команды Мстителей.",
+
+        "Doctor Strange":
+            "Стивен Стрэндж открывает для себя магию и становится одним из защитников Земли.",
+
+        "Spider-Man: Homecoming":
+            "Питер Паркер пытается совмещать обычную жизнь школьника с обязанностями супергероя.",
+
+        "Avengers: Infinity War":
+            "Мстители и их союзники сталкиваются с Таносом, который собирается собрать Камни Бесконечности.",
+
+        "Avengers: Endgame":
+            "Оставшиеся герои пытаются исправить последствия событий Infinity War.",
+
+        "Spider-Man: Far From Home":
+            "Питер Паркер отправляется в путешествие и сталкивается с новой угрозой.",
+
+        "Loki":
+            "Локи оказывается связан с организацией, которая контролирует временные линии.",
+
+        "Spider-Man: No Way Home":
+            "Попытка Питера изменить события приводит к серьёзным последствиям для границ между вселенными.",
+
+        "Doctor Strange in the Multiverse of Madness":
+            "Доктор Стрэндж сталкивается с опасностями мультивселенной."
+
+    };
+
+
+    return descriptions[title]
+        || "Информация об этом проекте Marvel скоро будет добавлена.";
+
+}
+
+
+
+/*
+    ПЕРСОНАЖИ
+*/
+
+function getCharacters(title) {
+
+    const characters = {
+
+        "Iron Man":
+            ["Tony Stark", "Pepper Potts", "James Rhodes", "Obadiah Stane"],
+
+        "The Avengers":
+            ["Iron Man", "Captain America", "Thor", "Hulk", "Black Widow", "Hawkeye"],
+
+        "Thor":
+            ["Thor", "Loki", "Odin", "Jane Foster"],
+
+        "Captain America: The First Avenger":
+            ["Steve Rogers", "Peggy Carter", "Bucky Barnes", "Red Skull"],
+
+        "Guardians of the Galaxy":
+            ["Star-Lord", "Gamora", "Rocket", "Groot", "Drax"],
+
+        "Doctor Strange":
+            ["Doctor Strange", "Wong", "Ancient One", "Mordo"],
+
+        "Spider-Man: Homecoming":
+            ["Spider-Man", "Tony Stark", "MJ", "Ned Leeds", "Vulture"],
+
+        "Avengers: Infinity War":
+            ["Iron Man", "Thor", "Captain America", "Spider-Man", "Thanos"],
+
+        "Avengers: Endgame":
+            ["Iron Man", "Captain America", "Thor", "Black Widow", "Hulk"],
+
+        "Loki":
+            ["Loki", "Sylvie", "Mobius", "He Who Remains"]
+
+    };
+
+
+    const list =
+        characters[title]
+        || ["Информация скоро будет добавлена"];
+
+
+    return list.map(
+        character =>
+            `<span class="character">${character}</span>`
+    ).join("");
+
+}
+
+
+
+/*
+    YOUTUBE TRAILERS
+
+    Здесь находятся ID официальных
+    трейлеров YouTube.
+*/
+
+function getTrailer(title) {
+
+    const trailers = {
+
+        "Iron Man":
+            "8ugaeA-nMTc",
+
+        "The Avengers":
+            "eOrNdBpGMv8",
+
+        "Thor":
+            "JOddp-nlNvQ",
+
+        "Captain America: The First Avenger":
+            "JerVrbLldXw",
+
+        "Guardians of the Galaxy":
+            "d96cjJhvlMA",
+
+        "Doctor Strange":
+            "Lt-U_t2pUHI",
+
+        "Spider-Man: Homecoming":
+            "n9DwoQ7HWvI",
+
+        "Avengers: Infinity War":
+            "6ZfuNTqbHE8",
+
+        "Avengers: Endgame":
+            "TcMBFSGVi1c",
+
+        "Spider-Man: Far From Home":
+            "Nt9L1jCKGnE",
+
+        "Loki":
+            "nW948Va-l10",
+
+        "Spider-Man: No Way Home":
+            "JfVOs4VSpmA"
+
+    };
+
+
+    return trailers[title] || null;
+
+}
+
+</script>
+
+
+</body>
+
+</html>
